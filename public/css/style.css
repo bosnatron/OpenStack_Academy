@@ -1,4 +1,4 @@
-:root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f7f9fc; color: #18253b; }
+:root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #ad865c; color: #18253b; }
 * { box-sizing: border-box; }
 body { margin: 0; line-height: 1.6; }
 a { color: #1553a4; }
@@ -15,7 +15,7 @@ h1 { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.15; margin: .3em 0; }
 h2 { margin-top: 1.5rem; }
 .motto { font-weight: 600; }
 .lesson-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1rem; }
-.lesson-list li a { display: flex; flex-direction: column; gap: .3rem; height: 100%; padding: 1.25rem; border: 1px solid #dce4ee; border-radius: 12px; background: white; text-decoration: none; }
+.lesson-list li a { display: flex; flex-direction: column; gap: .3rem; height: 100%; padding: 1.25rem; border: 1px solid #82613f; border-radius: 12px; background: #ad865c; text-decoration: none; }
 .lesson-list li a:hover { border-color: #1553a4; box-shadow: 0 3px 12px #13243e12; }
 .lesson-list strong { color: #172a47; }
 .lesson-list span { color: #53637a; }
@@ -44,3 +44,7 @@ pre { overflow-x: auto; }
 .academy-chess-credit { margin: .6rem 0 0; color: #cbd5e1; font-size: .76rem; text-align: center; }
 .academy-chess-credit a { color: #d4e6ff; }
 @media (max-width: 420px) { .academy-gate { padding: .6rem; } .academy-gate-heading { font-size: .72rem; } .academy-welcome-close { top: 6px; right: 6px; width: 38px; height: 38px; } }
+
+/* Shared warm sand palette, matching the chess welcome surround. */
+html, body { background-color: #ad865c !important; }
+.jumbotron, .well, .panel, .thumbnail, .card { background-color: #ad865c !important; }
