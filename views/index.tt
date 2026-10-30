@@ -1,3 +1,25 @@
+<section class="academy-gate" aria-label="Academy chess entrance">
+  <div class="academy-gate-heading"><span>♟️ OPENSTACK ACADEMY</span><span>Entrance challenge</span></div>
+  <div class="academy-board-wrap">
+    <div id="academy-chessboard" class="academy-chessboard" tabindex="-1" aria-label="Chessground chessboard"></div>
+    <div id="academy-welcome" class="academy-welcome">
+      <div class="academy-welcome-panel">
+        <button id="academy-welcome-close" class="academy-welcome-close" type="button" aria-label="Close welcome message and reveal chessboard">×</button>
+        <h1>Welcome to OpenStack Academy!</h1>
+        <p class="academy-welcome-lead">Solve the chess challenge to earn your access key.</p>
+        <p>Checkmate in 3 moves.</p>
+        <p class="academy-welcome-help">Click X to reveal the chessboard and begin.</p>
+      </div>
+    </div>
+  </div>
+  <p id="academy-board-status" class="academy-board-status">Chessboard preview — puzzle validation and lesson unlocking are coming next.</p>
+  <p class="academy-chess-credit">♟️ Powered by Chessground. Special thanks to the developers and contributors of <a href="https://lichess.org">Lichess</a>. GPL-3.0-or-later · <a href="https://github.com/lichess-org/chessground#readme">Original README</a> · <a href="https://github.com/lichess-org/chessground/blob/master/LICENSE">License</a> · <a href="https://github.com/bosnatron/chessground">Our fork</a> · <a href="https://github.com/bosnatron/OpenStack_Academy">Academy source</a>.</p>
+</section>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.base.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.brown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.cburnett.css">
+<script type="module" src="/js/academy-chess.js"></script>
+
 <section class="hero">
   <p class="eyebrow">Open-source technology education</p>
   <h1>Learn by building.</h1>
