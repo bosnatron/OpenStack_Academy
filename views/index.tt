@@ -30,6 +30,11 @@
 </section>
 <section aria-labelledby="lessons-title">
   <h2 id="lessons-title">Start learning</h2>
+  <section class="bv-entry" aria-label="Bright Vale workspace" style="margin:1rem 0 2rem;padding:1.3rem;border:2px solid #182331;border-radius:12px">
+    <h2 style="margin-top:0">Bright Vale · Interaction workspace</h2>
+    <p>Open the local-first assistant interface. Connection to the BV Perl core is not configured yet.</p>
+    <a class="academy-nav-button" href="/bv">Open Bright Vale →</a>
+  </section>
   <ol class="lesson-list">
     <li><a href="/Step01"><strong>Linux installation</strong><span>Get started with Slackware Linux</span></a></li>
     <li><a href="/Step02"><strong>Linux commands</strong><span>Explore the command line</span></a></li>
