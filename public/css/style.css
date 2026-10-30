@@ -22,3 +22,25 @@ h2 { margin-top: 1.5rem; }
 .site-footer { padding: 1.5rem 0; background: #e9eef5; color: #52617a; font-size: .85rem; }
 img { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
+
+
+/* Chess entrance: presentation only; puzzle and unlock logic will be added separately. */
+.academy-gate { max-width: 620px; margin: 0 auto 3rem; padding: 1rem; border-radius: 18px; background: #202b39; color: #e5edf6; }
+.academy-gate-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: center; margin-bottom: 1rem; font-size: .85rem; font-weight: 700; letter-spacing: .04em; }
+.academy-gate-heading span:last-child { color: #b8c8da; font-size: .76rem; font-weight: 400; }
+.academy-board-wrap { position: relative; width: 100%; aspect-ratio: 1 / 1; background: #ad865c; border-radius: 8px; overflow: hidden; }
+.academy-chessboard { width: 100%; height: 100%; }
+.academy-chessboard cg-board { box-shadow: inset 0 0 0 1px #0002; }
+.academy-welcome { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; padding: clamp(8px, 3vw, 18px); background: #ad865c; }
+.academy-welcome[hidden] { display: none; }
+.academy-welcome-panel { width: 100%; max-width: 500px; min-height: 80%; padding: clamp(14px, 4vw, 30px); border-radius: 12px; background: #182331; color: white; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: clamp(6px, 1.8vw, 16px); position: relative; }
+.academy-welcome-panel h1 { font-size: clamp(1.35rem, 4.2vw, 2.25rem); line-height: 1.2; margin: 1rem 0 0; }
+.academy-welcome-panel p { margin: 0; }
+.academy-welcome-lead { font-size: clamp(1.1rem, 3vw, 1.55rem); line-height: 1.35; font-weight: 700; }
+.academy-welcome-help { font-size: clamp(.8rem, 2vw, .95rem); color: #cbd5e1; }
+.academy-welcome-close { position: absolute; top: 12px; right: 12px; width: 46px; height: 46px; border: 1px solid #94a3b8; border-radius: 10px; background: #24364b; color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; }
+.academy-welcome-close:hover, .academy-welcome-close:focus-visible { background: #3d5875; outline: 2px solid #f3c36c; }
+.academy-board-status { margin: .8rem 0; color: #e4edf6; font-size: .85rem; text-align: center; }
+.academy-chess-credit { margin: .6rem 0 0; color: #cbd5e1; font-size: .76rem; text-align: center; }
+.academy-chess-credit a { color: #d4e6ff; }
+@media (max-width: 420px) { .academy-gate { padding: .6rem; } .academy-gate-heading { font-size: .72rem; } .academy-welcome-close { top: 6px; right: 6px; width: 38px; height: 38px; } }
