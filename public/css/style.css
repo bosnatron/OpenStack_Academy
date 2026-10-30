@@ -19,7 +19,7 @@ h2 { margin-top: 1.5rem; }
 .lesson-list li a:hover { border-color: #1553a4; box-shadow: 0 3px 12px #13243e12; }
 .lesson-list strong { color: #172a47; }
 .lesson-list span { color: #53637a; }
-.site-footer { padding: 1.5rem 0; background: #e9eef5; color: #52617a; font-size: .85rem; }
+.site-footer { padding: 1.5rem 0; background: #ad865c; color: #52617a; font-size: .85rem; }
 img { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 
@@ -48,3 +48,12 @@ pre { overflow-x: auto; }
 /* Shared warm sand palette, matching the chess welcome surround. */
 html, body { background-color: #ad865c !important; }
 .jumbotron, .well, .panel, .thumbnail, .card { background-color: #ad865c !important; }
+
+/* Uniform sand-brown page canvas, including outside the chess welcome and board. */
+html, body, body > main, #main-content, #page, #sidebar, .theme-showcase {
+  background-color: #ad865c !important;
+}
+/* Legacy Bootstrap lesson panels can otherwise remain white. */
+.jumbotron, .well, .panel, .panel-body, .thumbnail, .card, .site-footer {
+  background-color: #ad865c !important;
+}
