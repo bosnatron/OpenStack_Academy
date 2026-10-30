@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CPAN – Perl moduli | OpenStack Academy</title>
 <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
 <style>body{background:#ad865c;color:#24324a;font-family:system-ui,-apple-system,sans-serif;line-height:1.7}.academy{max-width:880px;margin:40px auto;padding:0 20px}.lesson{background:#ad865c;border-radius:16px;padding:clamp(24px,5vw,48px);box-shadow:0 8px 30px #19315214}.top{margin-bottom:24px}.top a,.links a{color:#175caa}h1{font-size:2.3rem;margin:0 0 16px}h2{font-size:1.45rem;margin-top:34px;color:#174d83}p{font-size:1.05rem}pre{background:#162235;color:#eef6ff;border-radius:10px;padding:18px;overflow-x:auto;line-height:1.5}pre code{color:inherit;background:none;padding:0;white-space:pre}code{background:#edf2f7;border-radius:4px;padding:2px 5px}nav.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;padding-top:20px;border-top:1px solid #e4eaf2}nav.links a{padding:6px 12px;background:#edf4fc;border-radius:8px}nav.links a[aria-current=page]{font-weight:700;background:#d6e7fa}@media(max-width:600px){.academy{margin:16px auto}.lesson{padding:22px}h1{font-size:1.9rem}}</style>
 </head>
 <body>
-<main class="academy"><div class="top"><a href="/">← Početna stranica Akademije</a></div><article class="lesson"><p>OpenStack Academy · Lekcija 7</p><h1>CPAN – Perl moduli</h1><p><strong>CPAN</strong> (Comprehensive Perl Archive Network) je velika zbirka Perl modula. Modul je gotova biblioteka koju možeš koristiti umjesto da sve pišeš od početka.</p><h2>Pretraživanje i instalacija</h2><p>Module možeš pronaći na <a href="https://metacpan.org/">MetaCPAN-u</a>. U Terminalu možeš koristiti standardni CPAN klijent:</p><pre><code>cpan App::cpanminus
+<main class="academy"><nav class="academy-nav-home" aria-label="Lesson home"><a class="academy-nav-button" href="/">⌂ Home</a></nav><article class="lesson"><p>OpenStack Academy · Lekcija 7</p><h1>CPAN – Perl moduli</h1><p><strong>CPAN</strong> (Comprehensive Perl Archive Network) je velika zbirka Perl modula. Modul je gotova biblioteka koju možeš koristiti umjesto da sve pišeš od početka.</p><h2>Pretraživanje i instalacija</h2><p>Module možeš pronaći na <a href="https://metacpan.org/">MetaCPAN-u</a>. U Terminalu možeš koristiti standardni CPAN klijent:</p><pre><code>cpan App::cpanminus
 cpan JSON::PP</code></pre><p>Ako je <code>cpanm</code> instaliran, instalacija je kraća:</p><pre><code>cpanm Try::Tiny
 perl -MTry::Tiny -e 'print "Modul je dostupan\n"'</code></pre><p>Na nekim računarima potrebne su dodatne dozvole ili lokalna Perl instalacija. Nemoj nasumično koristiti <code>sudo</code>.</p><h2>Korištenje modula</h2><pre><code>use strict;
 use warnings;
@@ -18,5 +19,5 @@ my $tekst = encode_json({ ime => 'Amina', bodovi => 10 });
 print "$tekst\n";
 
 my $podaci = decode_json($tekst);
-print "$podaci->{ime}\n";</code></pre><p><code>use</code> učitava modul, a <code>qw(...)</code> navodi funkcije koje uvozimo. <strong>Vježba:</strong> pronađi jedan modul na MetaCPAN-u, pročitaj njegov opis i napiši mali primjer upotrebe.</p><nav class="links" aria-label="Ostale lekcije"><a href="/Step06">Perl</a><a href="/Step07" aria-current="page">CPAN</a><a href="/Step08">Dancer2</a><a href="/Step09">Git i GitHub</a></nav></article></main>
+print "$podaci->{ime}\n";</code></pre><p><code>use</code> učitava modul, a <code>qw(...)</code> navodi funkcije koje uvozimo. <strong>Vježba:</strong> pronađi jedan modul na MetaCPAN-u, pročitaj njegov opis i napiši mali primjer upotrebe.</p><nav class="links" aria-label="Ostale lekcije"><a href="/Step06">Perl</a><a href="/Step07" aria-current="page">CPAN</a><a href="/Step08">Dancer2</a><a href="/Step09">Git i GitHub</a></nav></article><nav class="academy-nav-next" aria-label="Lesson navigation"><a class="academy-nav-button" href="/Step08">Next →</a></nav></main>
 </body></html>
