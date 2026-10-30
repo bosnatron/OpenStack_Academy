@@ -178,5 +178,43 @@ h3 {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/javascripts/jquery-2.2.0.min.js"><\/script>')</script>
     <script src="/javascripts/bootstrap.min.js"></script> 
-  </body>
+  <section class="academy-lesson-extra" aria-label="Perl beginner lesson">
+<h2>Perl essentials</h2>
+<p>Perl is a flexible programming language used for text processing, automation, system administration and web applications. Perl programs can be short scripts or larger applications.</p>
+<h3>Run your first program</h3>
+<pre><code>perl -v
+perl -e 'print "Hello, Academy!\n";'
+perl hello.pl
+perl -c hello.pl</code></pre>
+<p><code>perl -v</code> shows the installed version. <code>-e</code> runs a one-line program, and <code>-c</code> checks syntax without running the program.</p>
+<h3>Variables and decisions</h3>
+<pre><code>use strict;
+use warnings;
+my $name = "Student";    # scalar
+my @topics = ("Perl", "CPAN");
+my %scores = (Perl =&gt; 10);
+print "Hello, $name!\n";
+if ($scores{Perl} &gt;= 10) {
+    print "Great work!\n";
+}
+for my $topic (@topics) {
+    print "$topic\n";
+}</code></pre>
+<p><code>$</code> names a scalar value, <code>@</code> an array, and <code>%</code> a hash. <code>my</code> declares a lexical variable. Start new scripts with <code>use strict;</code> and <code>use warnings;</code>.</p>
+<h3>Subroutines and files</h3>
+<pre><code>sub greet {
+    my ($who) = @_;
+    return "Welcome, $who";
+}
+print greet("Academy"), "\n";
+
+open my $fh, '&lt;', 'notes.txt' or die "Cannot open: $!";
+while (my $line = &lt;$fh&gt;) {
+    print $line;
+}
+close $fh;</code></pre>
+<p>Subroutines group reusable logic. <code>open</code> reads or writes files; always handle errors. To explore Perl's built-in documentation, try <code>perldoc perlintro</code> and <code>perldoc perlfunc</code>.</p>
+<p><strong>Practice:</strong> Create <code>hello.pl</code>, print your name and three favorite topics, then run <code>perl -c hello.pl</code> followed by <code>perl hello.pl</code>.</p>
+</section>
+</body>
 </html>
