@@ -1,3 +1,4 @@
+<% IF !unlocked %>
 <section class="academy-gate" aria-label="Academy chess entrance">
   <div class="academy-gate-heading"><span>♟️ OPENSTACK ACADEMY</span><span>Entrance challenge</span></div>
   <div class="academy-board-wrap">
@@ -12,18 +13,18 @@
       </div>
     </div>
   </div>
-  <p id="academy-board-status" class="academy-board-status">Chessboard preview — puzzle validation and lesson unlocking are coming next.</p>
+  <p id="academy-board-status" class="academy-board-status">White to move. Checkmate in three moves.</p>
   <p class="academy-chess-credit">♟️ Powered by Chessground. Special thanks to the developers and contributors of <a href="https://lichess.org">Lichess</a>. GPL-3.0-or-later · <a href="https://github.com/lichess-org/chessground#readme">Original README</a> · <a href="https://github.com/lichess-org/chessground/blob/master/LICENSE">License</a> · <a href="https://github.com/bosnatron/chessground">Our fork</a> · <a href="https://github.com/bosnatron/OpenStack_Academy">Academy source</a>.</p>
 </section>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.base.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.brown.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.cburnett.css">
 <script type="module" src="/js/academy-chess.js"></script>
-
+<% ELSE %>
 <section class="hero">
   <p class="eyebrow">Open-source technology education</p>
   <h1>Learn by building.</h1>
-  <p>OpenStack Academy offers practical lessons in Linux, development, databases, and open-source tools.</p>
+  <p>Academy unlocked. Welcome to your lessons in Linux, development, databases, and open-source tools.</p>
   <p class="motto">TIMTOWTDI — With Perl, hard jobs are possible.</p>
 </section>
 <section aria-labelledby="lessons-title">
@@ -40,3 +41,4 @@
     <li><a href="/Step09"><strong>Git and GitHub</strong><span>Track and share code</span></a></li>
   </ol>
 </section>
+<% END %>
