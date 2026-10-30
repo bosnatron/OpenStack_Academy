@@ -46,6 +46,36 @@ for my $number (2 .. 9) {
     post "/$name" => sub { redirect(session('academy_unlocked') ? "/$name" : '/') };
 }
 
+
+# Bright Vale: local-only workspace. The BV transport remains disconnected
+# until its actual Perl API contract and permissions have been verified.
+get '/bv' => sub {
+    return redirect '/' unless session('academy_unlocked');
+    response_header 'Cache-Control' => 'no-store';
+    template 'bv';
+};
+
+get '/api/bv/status' => sub {
+    content_type 'application/json';
+    response_header 'Cache-Control' => 'no-store';
+    return JSON::PP::encode_json({
+        connected => JSON::PP::false,
+        mode => 'local',
+        reason => 'BV local service is not configured',
+    });
+};
+
+post '/api/bv/message' => sub {
+    content_type 'application/json';
+    response_header 'Cache-Control' => 'no-store';
+    unless (session('academy_unlocked')) {
+        status 403;
+        return JSON::PP::encode_json({ ok => JSON::PP::false, error => 'Academy access required' });
+    }
+    status 503;
+    return JSON::PP::encode_json({ ok => JSON::PP::false, error => 'BV local service is not connected yet' });
+};
+
 get '/login'  => sub { redirect '/' };
 get '/logout' => sub { redirect '/' };
 
