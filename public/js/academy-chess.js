@@ -193,6 +193,48 @@ if (board && overlay && dismiss && notice) {
       },
     });
 
+    // After server confirmation, replace the chess challenge with a centered
+    // congratulations screen for three seconds, then open the Academy.
+    window.addEventListener('academy:chess-solved', async (event) => {
+      show('Checkmate! Verifying access...');
+      try {
+        const response = await fetch('/api/chess/unlock', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+          body: JSON.stringify(event.detail),
+        });
+        if (!response.ok) throw new Error('Unlock request rejected');
+        const result = await response.json();
+        if (!result.ok || !result.unlocked) throw new Error('Access not confirmed');
+
+        const gate = document.querySelector('.academy-gate');
+        if (gate) gate.hidden = true;
+        const celebration = document.createElement('div');
+        celebration.setAttribute('role', 'status');
+        celebration.setAttribute('aria-live', 'polite');
+        celebration.style.cssText = 'position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:#101d32;color:#fff;text-align:center;padding:24px;font-family:system-ui,sans-serif';
+        const icon = document.createElement('div');
+        icon.textContent = '✓';
+        icon.style.cssText = 'font-size:64px;color:#9ee6b4;line-height:1';
+        const heading = document.createElement('h1');
+        heading.textContent = 'Congratulations!';
+        heading.style.cssText = 'margin:0;font-size:clamp(30px,6vw,48px)';
+        const subtitle = document.createElement('p');
+        subtitle.textContent = 'Access Granted';
+        subtitle.style.cssText = 'margin:0;color:#9ee6b4;font-size:clamp(24px,4vw,34px);font-weight:700';
+        const welcome = document.createElement('p');
+        welcome.textContent = 'Welcome to OpenStack Academy';
+        welcome.style.cssText = 'margin:0;color:#cbd5e1;font-size:16px';
+        celebration.append(icon, heading, subtitle, welcome);
+        document.body.appendChild(celebration);
+        setTimeout(() => window.location.replace('/'), 3000);
+      } catch (error) {
+        console.error('Academy unlock failed:', error);
+        show('Checkmate confirmed, but access could not be granted. Please refresh and try again.');
+      }
+    });
+
     dismiss.addEventListener('click', () => {
       overlay.hidden = true;
       board.focus();
