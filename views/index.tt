@@ -12,8 +12,9 @@
       </div>
     </div>
   </div>
-  <p id="academy-board-status" class="academy-board-status">Chessboard preview — puzzle validation and lesson unlocking are coming next.</p>
-  <p class="academy-chess-credit">♟️ Powered by Chessground. Special thanks to the developers and contributors of <a href="https://lichess.org">Lichess</a>. GPL-3.0-or-later · <a href="https://github.com/lichess-org/chessground#readme">Original README</a> · <a href="https://github.com/lichess-org/chessground/blob/master/LICENSE">License</a> · <a href="https://github.com/bosnatron/chessground">Our fork</a> · <a href="https://github.com/bosnatron/OpenStack_Academy">Academy source</a>.</p>
+  <p id="academy-board-status" class="academy-board-status">Loading checkmate-in-three puzzles…</p>
+  <button id="academy-board-reset" type="button">Next checkmate-in-three puzzle</button>
+  <p class="academy-chess-credit">♟️ Mate-in-three puzzles from the <a href="https://database.lichess.org/">Lichess CC0 puzzle database</a>. Powered by Chessground. Special thanks to the developers and contributors of <a href="https://lichess.org">Lichess</a>. GPL-3.0-or-later · <a href="https://github.com/lichess-org/chessground#readme">Original README</a> · <a href="https://github.com/lichess-org/chessground/blob/master/LICENSE">License</a> · <a href="https://github.com/bosnatron/chessground">Our fork</a> · <a href="https://github.com/bosnatron/OpenStack_Academy">Academy source</a>.</p>
 </section>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.base.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.brown.css">
