@@ -1,4 +1,5 @@
 
+<nav class="academy-nav-home" aria-label="Lesson home"><a class="academy-nav-button" href="/">⌂ Home</a></nav>
 <div id="page">
 <div id ="sidebar">
 <ul id="sidebar-items">  
@@ -6,7 +7,7 @@
     
     
     
-    <a class="navbar-brand" href="/" title="Home"><input type='submit' value='Home' /></a>
+    
     
     
     
@@ -17,7 +18,7 @@
 
 <style>
 body {
-    background-color: lightgreen;
+    background-color: #ad865c;
 }
 </style>
 
@@ -133,10 +134,7 @@ body {
         
 	    <h4>HTTP<a> </a></h4>
             <input type='hidden' name='path' value='<% requested_path %>'/>
-             <form action='/Step04' method='POST'>
-            <input type='submit' value='Korak-4' /> 
-            
-            </form>
+             
         
         
         
@@ -147,3 +145,4 @@ body {
 
 
     
+<nav class="academy-nav-next" aria-label="Lesson navigation"><a class="academy-nav-button" href="/Step04">Next →</a></nav>

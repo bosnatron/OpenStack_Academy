@@ -1,0 +1,10 @@
+<section class="bv-console" aria-labelledby="bv-title">
+  <div class="bv-console-head"><div><p class="eyebrow">Local-first assistant workspace</p><h1 id="bv-title">Bright Vale</h1><p>PERL STAYS AT HOME, OTHERS CAN VISIT.</p></div><a class="bv-back" href="/">← Academy</a></div>
+  <div class="bv-state" role="status"><span class="bv-state-dot" aria-hidden="true"></span><span id="bv-connection">Checking local connection…</span></div>
+  <div class="bv-messages" id="bv-messages" role="log" aria-live="polite" aria-label="Bright Vale conversation">
+    <p class="bv-note">This is the Bright Vale interaction workspace. Messages will be sent only after the local Perl service is connected. Nothing is being sent to a third-party AI service.</p>
+  </div>
+  <form id="bv-form" class="bv-form"><label for="bv-input">Message to Bright Vale</label><textarea id="bv-input" rows="3" maxlength="4000" placeholder="Ask BV a question…" disabled></textarea><div class="bv-actions"><small id="bv-hint">Waiting for a verified local BV backend.</small><button id="bv-send" type="submit" disabled>Send to BV</button></div></form>
+</section>
+<link rel="stylesheet" href="/css/bv.css">
+<script src="/js/bv-console.js" defer></script>

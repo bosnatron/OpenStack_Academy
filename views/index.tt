@@ -1,3 +1,4 @@
+<% IF !unlocked %>
 <section class="academy-gate" aria-label="Academy chess entrance">
   <div class="academy-gate-heading"><span>♟️ OPENSTACK ACADEMY</span><span>Entrance challenge</span></div>
   <div class="academy-board-wrap">
@@ -20,6 +21,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.cburnett.css">
 <script type="module" src="/js/academy-chess.js"></script>
 
+<% ELSE %>
 <section class="hero">
   <p class="eyebrow">Open-source technology education</p>
   <h1>Learn by building.</h1>
@@ -40,3 +42,4 @@
     <li><a href="/Step09"><strong>Git and GitHub</strong><span>Track and share code</span></a></li>
   </ol>
 </section>
+<% END %>
