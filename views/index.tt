@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.base.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.brown.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.cburnett.css">
-<script type="module" src="/js/academy-chess.js?v=random-visit-three-attempt-2"></script>
+<script type="module" src="/js/academy-chess.js?v=opponent-checkmate-reset-3"></script>
 
 <% ELSE %>
 <section class="hero">
