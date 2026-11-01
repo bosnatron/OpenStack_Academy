@@ -7,5 +7,5 @@
   </div>
   <form id="bv-form" class="bv-form"><label for="bv-input">Message to Bright Vale</label><textarea id="bv-input" rows="3" maxlength="4000" placeholder="Ask BV a question…" disabled></textarea><div class="bv-actions"><small id="bv-hint">Waiting for a verified local BV backend.</small><button id="bv-send" type="submit" disabled>Send to BV</button></div></form>
 </section>
-<link rel="stylesheet" href="/css/bv.css">
-<script src="/js/bv-console.js" defer></script>
+<link rel="stylesheet" href="/css/bv.css?v=chat-scroll-2">
+<script src="/js/bv-console.js?v=chat-scroll-2" defer></script>
