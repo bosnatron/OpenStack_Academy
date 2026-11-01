@@ -26,12 +26,19 @@
       copyAll.textContent = 'Select all prepared — press Cmd+C';
     }
   });
+  function followLatest(messageNode) {
+    requestAnimationFrame(() => {
+      log.scrollTop = log.scrollHeight;
+      messageNode.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+      requestAnimationFrame(() => { log.scrollTop = log.scrollHeight; });
+    });
+  }
   function add(role, message) {
     const p = document.createElement('div');
     p.className = 'bv-message ' + role;
     p.textContent = message;
     log.appendChild(p);
-    log.scrollTop = log.scrollHeight;
+    followLatest(p);
   }
   async function check() {
     try {
@@ -68,7 +75,7 @@
       add('assistant', data.reply);
     } catch (error) {
       add('assistant', 'Unable to contact BV: ' + error.message);
-    } finally { await check(); input.focus(); }
+    } finally { await check(); input.focus({ preventScroll: true }); }
   });
   check();
 })();
