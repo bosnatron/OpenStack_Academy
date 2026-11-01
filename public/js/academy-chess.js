@@ -9,7 +9,7 @@ const PUZZLES = [{
   line: ['a2c4', 'c3d2', 'c4c1', 'd2c1', 'c5b3'],
 }];
 async function loadPuzzles() {
-  const response = await fetch('/data/mate-in-three.json');
+  const response = await fetch('/data/mate-in-three.json', { cache: 'no-store' });
   if (!response.ok) throw new Error('Puzzle catalog unavailable');
   const data = await response.json();
   const extra = [];
@@ -22,7 +22,7 @@ async function loadPuzzles() {
       for (const raw of p.moves.slice(1)) {
         verify.move({from:raw.slice(0,2),to:raw.slice(2,4),promotion:raw[4] || 'q'});
       }
-      if (verify.isCheckmate() && verify.turn() === 'b') extra.push({id:p.id,fen:start,line:p.moves.slice(1)});
+      if (verify.isCheckmate()) extra.push({id:p.id,fen:start,line:p.moves.slice(1)});
     } catch (_) { /* Reject invalid puzzle data */ }
   }
   return [...PUZZLES, ...extra];
@@ -36,6 +36,7 @@ const notice = document.getElementById('academy-board-status');
 if (board && overlay && dismiss && notice) {
   try {
     const puzzles = await loadPuzzles();
+    console.info('Academy checkmate-in-three puzzles loaded:', puzzles.map(p => p.id));
     const puzzle = puzzles[Math.floor(Math.random() * puzzles.length)];
     const proof = new Chess(puzzle.fen);
     for (const uci of puzzle.line) {
@@ -46,7 +47,9 @@ if (board && overlay && dismiss && notice) {
     }
 
     let game = new Chess(puzzle.fen);
-    let whiteMoves = 0;
+    const solverColor = game.turn();
+    const solverName = solverColor === 'w' ? 'White' : 'Black';
+    let solverMoves = 0;
     let played = [];
     let busy = false;
     let solved = false;
@@ -57,7 +60,7 @@ if (board && overlay && dismiss && notice) {
 
     function destinations() {
       const result = new Map();
-      if (busy || solved || game.turn() !== 'w') return result;
+      if (busy || solved || game.turn() !== solverColor) return result;
       for (const m of game.moves({ verbose: true })) {
         if (!result.has(m.from)) result.set(m.from, []);
         result.get(m.from).push(m.to);
@@ -73,17 +76,17 @@ if (board && overlay && dismiss && notice) {
         lastMove,
         movable: {
           free: false,
-          color: !busy && !solved && game.turn() === 'w' ? 'white' : undefined,
+          color: !busy && !solved && game.turn() === solverColor ? (solverColor === 'w' ? 'white' : 'black') : undefined,
           dests: destinations(),
         },
       });
     }
 
-    function resetPuzzle(message = 'White to move. Checkmate in three moves. (Move 1 of 3)') {
+    function resetPuzzle(message = solverName + ' to move. Checkmate in three moves. (Move 1 of 3)') {
       clearTimeout(replyTimer);
       clearTimeout(resetTimer);
       game = new Chess(puzzle.fen);
-      whiteMoves = 0;
+      solverMoves = 0;
       played = [];
       busy = false;
       solved = false;
@@ -134,20 +137,20 @@ if (board && overlay && dismiss && notice) {
 
       // Else choose the reply that minimizes White's chances.
       // Search 2 additional plies: White's next move and Black's response.
-      let best = candidates[0], lowest = Infinity;
+      let best = candidates[0], bestScore = solverColor === 'w' ? Infinity : -Infinity;
       for (const move of candidates) {
         game.move(move);
         const value = search(2, -Infinity, Infinity);
         game.undo();
-        if (value < lowest) { lowest = value; best = move; }
+        if ((solverColor === 'w' && value < bestScore) || (solverColor === 'b' && value > bestScore)) { bestScore = value; best = move; }
       }
       return best;
     }
 
-    function blackReply() {
+    function opponentReply() {
       const candidates = game.moves({ verbose: true });
       if (!candidates.length) {
-        resetPuzzle('No legal Black reply. Puzzle reset — try again.');
+        resetPuzzle('No legal opponent reply. Puzzle reset — try again.');
         return;
       }
       const selected = defensiveReply(candidates);
@@ -155,10 +158,10 @@ if (board && overlay && dismiss && notice) {
       played.push(uciOf(move));
       busy = false;
       redraw([move.from, move.to]);
-      show('Your move ' + (whiteMoves + 1) + ' of 3. Find checkmate.');
+      show('Your move ' + (solverMoves + 1) + ' of 3. Find checkmate.');
     }
 
-    function afterWhiteMove(from, to) {
+    function afterSolverMove(from, to) {
       if (busy || solved) return;
       let move;
       try {
@@ -168,16 +171,16 @@ if (board && overlay && dismiss && notice) {
         show('Illegal move. Choose a highlighted legal destination.');
         return;
       }
-      whiteMoves++;
+      solverMoves++;
       played.push(uciOf(move));
       busy = true;
       redraw([from, to]);
 
-      if (whiteMoves === 3) {
+      if (solverMoves === 3) {
         if (game.isCheckmate()) {
           solved = true;
           redraw([from, to]);
-          show('CHECKMATE! Puzzle solved in three White moves.');
+          show('CHECKMATE! Puzzle solved in three ' + solverName + ' moves.');
           window.dispatchEvent(new CustomEvent('academy:chess-solved', {
             detail: { puzzleId: puzzle.id, line: [...played] },
           }));
@@ -191,24 +194,24 @@ if (board && overlay && dismiss && notice) {
         resetTimer = setTimeout(() => resetPuzzle('Game ended early. Try again.'), 900);
         return;
       }
-      show('Black is choosing a defensive reply...');
-      replyTimer = setTimeout(blackReply, 450);
+      show('Opponent is choosing a defensive reply...');
+      replyTimer = setTimeout(opponentReply, 450);
     }
 
     const ground = Chessground(board, {
       fen: puzzle.fen,
-      orientation: 'white',
-      turnColor: 'white',
+      orientation: solverColor === 'w' ? 'white' : 'black',
+      turnColor: solverColor === 'w' ? 'white' : 'black',
       viewOnly: false,
       coordinates: true,
       animation: { enabled: true },
       premovable: { enabled: false },
       movable: {
         free: false,
-        color: 'white',
+        color: solverColor === 'w' ? 'white' : 'black',
         dests: destinations(),
         showDests: true,
-        events: { after: afterWhiteMove },
+        events: { after: afterSolverMove },
       },
     });
 
@@ -260,7 +263,7 @@ if (board && overlay && dismiss && notice) {
     });
     document.getElementById('academy-board-reset')
       ?.addEventListener('click', () => resetPuzzle());
-    show('White to move. Checkmate in three moves. (Move 1 of 3)');
+    show(solverName + ' to move. Checkmate in three moves. (Move 1 of 3)');
   } catch (error) {
     notice.textContent = 'Unable to start the chess challenge. Please refresh the page.';
     console.error('Academy chess challenge failed:', error);
