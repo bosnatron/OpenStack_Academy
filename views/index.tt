@@ -13,14 +13,13 @@
       </div>
     </div>
   </div>
-  <p><button id="academy-next-puzzle" type="button">Next puzzle →</button></p>
-  <p id="academy-board-status" class="academy-board-status">Chessboard preview — puzzle validation and lesson unlocking are coming next.</p>
+  <p id="academy-board-status" class="academy-board-status">Solve checkmate in three. Three attempts per puzzle.</p>
   <p class="academy-chess-credit">♟️ Powered by Chessground. Special thanks to the developers and contributors of <a href="https://lichess.org">Lichess</a>. GPL-3.0-or-later · <a href="https://github.com/lichess-org/chessground#readme">Original README</a> · <a href="https://github.com/lichess-org/chessground/blob/master/LICENSE">License</a> · <a href="https://github.com/bosnatron/chessground">Our fork</a> · <a href="https://github.com/bosnatron/OpenStack_Academy">Academy source</a>.</p>
 </section>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.base.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.brown.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.cburnett.css">
-<script type="module" src="/js/academy-chess.js?v=academy-puzzle-selector-1"></script>
+<script type="module" src="/js/academy-chess.js?v=three-attempt-rotation-1"></script>
 
 <% ELSE %>
 <section class="hero">
