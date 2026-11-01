@@ -37,10 +37,9 @@ if (board && overlay && dismiss && notice) {
   try {
     const puzzles = await loadPuzzles();
     console.info('Academy checkmate-in-three puzzles loaded:', puzzles.map(p => p.id));
-    const savedId = sessionStorage.getItem('academy-challenge-puzzle');
-    const puzzle = puzzles.find(p => p.id === savedId)
-      || puzzles[Math.floor(Math.random() * puzzles.length)];
-    sessionStorage.setItem('academy-challenge-puzzle', puzzle.id);
+    // A fresh page visit starts with a random challenge; only the three
+    // attempts within this loaded challenge retain the same position.
+    const puzzle = puzzles[Math.floor(Math.random() * puzzles.length)];
     const puzzleLabel = 'Checkmate in three';
     const proof = new Chess(puzzle.fen);
     for (const uci of puzzle.line) {
@@ -54,8 +53,7 @@ if (board && overlay && dismiss && notice) {
     const solverColor = game.turn();
     const solverName = solverColor === 'w' ? 'White' : 'Black';
     let solverMoves = 0;
-    let failedAttempts = Number(sessionStorage.getItem('academy-challenge-failures') || 0);
-    if (!Number.isInteger(failedAttempts) || failedAttempts < 0 || failedAttempts > 2) failedAttempts = 0;
+    let failedAttempts = 0;
     let played = [];
     let busy = false;
     let solved = false;
@@ -65,13 +63,13 @@ if (board && overlay && dismiss && notice) {
     const show = message => { notice.textContent = message; };
     function failAttempt(reason) {
       failedAttempts++;
-      sessionStorage.setItem('academy-challenge-failures', String(failedAttempts));
+      
       busy = true;
       redraw(undefined);
       if (failedAttempts >= 3) {
         if (puzzles.length < 2) {
           failedAttempts = 0;
-          sessionStorage.setItem('academy-challenge-failures', '0');
+          
           resetTimer = setTimeout(() => resetPuzzle('Three attempts used. No other verified puzzle available; try again.'), 1100);
           return;
         }
