@@ -34,11 +34,11 @@ post '/api/chess/unlock' => sub {
         if (!defined $data->{line}[$i] || ref($data->{line}[$i])
             || $data->{line}[$i] ne $solution->[$i]) {
             status 400;
-            return encode_json({ ok => JSON::PP::false, error => 'Incorrect solution' });
+            return JSON::PP::encode_json({ ok => JSON::PP::false, error => 'Incorrect solution' });
         }
     }
     session academy_unlocked => 1;
-    return encode_json({ ok => JSON::PP::true, unlocked => JSON::PP::true });
+    return JSON::PP::encode_json({ ok => JSON::PP::true, unlocked => JSON::PP::true });
 };
 
 for my $number (1 .. 9) {
