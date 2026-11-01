@@ -22,7 +22,7 @@ async function loadPuzzles() {
       for (const raw of p.moves.slice(1)) {
         verify.move({from:raw.slice(0,2),to:raw.slice(2,4),promotion:raw[4] || 'q'});
       }
-      if (verify.isCheckmate() && verify.turn() === 'w') extra.push({id:p.id,fen:start,line:p.moves.slice(1)});
+      if (verify.isCheckmate() && verify.turn() === 'b') extra.push({id:p.id,fen:start,line:p.moves.slice(1)});
     } catch (_) { /* Reject invalid puzzle data */ }
   }
   return [...PUZZLES, ...extra];
