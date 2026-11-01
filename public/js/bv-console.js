@@ -7,6 +7,25 @@
   const hint = document.getElementById('bv-hint');
   const log = document.getElementById('bv-messages');
   let connected = false;
+  const copyAll = document.getElementById('bv-copy-all');
+  copyAll?.addEventListener('click', async () => {
+    const entries = [...log.querySelectorAll('.bv-message')].map(node =>
+      (node.classList.contains('user') ? 'You: ' : 'Bright Vale: ') + node.textContent
+    );
+    const transcript = entries.join('\n\n');
+    if (!transcript) { copyAll.textContent = 'No messages to copy'; return; }
+    try {
+      await navigator.clipboard.writeText(transcript);
+      copyAll.textContent = 'Copied conversation';
+    } catch (_) {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(log);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      copyAll.textContent = 'Select all prepared — press Cmd+C';
+    }
+  });
   function add(role, message) {
     const p = document.createElement('div');
     p.className = 'bv-message ' + role;
