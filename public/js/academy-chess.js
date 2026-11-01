@@ -39,7 +39,10 @@ if (board && overlay && dismiss && notice) {
     console.info('Academy checkmate-in-three puzzles loaded:', puzzles.map(p => p.id));
     // A fresh page visit starts with a random challenge; only the three
     // attempts within this loaded challenge retain the same position.
-    const puzzle = puzzles[Math.floor(Math.random() * puzzles.length)];
+    const forcedNext = sessionStorage.getItem('academy-next-on-failure');
+    sessionStorage.removeItem('academy-next-on-failure');
+    const puzzle = puzzles.find(p => p.id === forcedNext)
+      || puzzles[Math.floor(Math.random() * puzzles.length)];
     const puzzleLabel = 'Checkmate in three';
     const proof = new Chess(puzzle.fen);
     for (const uci of puzzle.line) {
@@ -75,8 +78,7 @@ if (board && overlay && dismiss && notice) {
         }
         const alternatives = puzzles.filter(p => p.id !== puzzle.id);
         const next = alternatives[Math.floor(Math.random() * alternatives.length)];
-        sessionStorage.setItem('academy-challenge-puzzle', next.id);
-        sessionStorage.setItem('academy-challenge-failures', '0');
+        sessionStorage.setItem('academy-next-on-failure', next.id);
         show(reason + ' Three attempts used. Loading a new random puzzle...');
         resetTimer = setTimeout(() => window.location.reload(), 1100);
       } else {
