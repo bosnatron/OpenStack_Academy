@@ -5,3 +5,6 @@
 .bv-message{max-width:100%;min-width:0;white-space:pre-wrap;overflow-wrap:anywhere;}
 
 .bv-copy-tools{display:flex;justify-content:flex-end;margin:.5rem 0}.bv-copy-tools button{padding:.5rem .8rem;border:1px solid #6b7788;border-radius:8px;background:#182331;color:white;cursor:pointer}
+
+/* Preserve actual message height so long replies scroll instead of shrinking. */
+.bv-message{flex-shrink:0;}
