@@ -2,11 +2,20 @@ package Web;
 use strict;
 use warnings;
 use Dancer2;
-use JSON::PP qw(decode_json encode_json);
+use JSON::PP ();
 
 # First challenge: require the complete known legal checkmate line.
 # This is an entrance challenge, not an anti-cheat chess engine.
-my @solution = qw(a2c4 c3d2 c4c1 d2c1 c5b3);
+my %solutions = (
+    'queen-sacrifice-001' => [qw(a2c4 c3d2 c4c1 d2c1 c5b3)],
+    'mate-three-001wr' => [qw(b4a5 a6b7 c4d6 b7b8 a5d8)],
+    'mate-three-004kb' => [qw(f6f2 f1f2 e8e1 f2f1 e1f1)],
+    'mate-three-005wy' => [qw(c6b4 c3b4 b8c8 d2c4 c8c4)],
+    'mate-three-09tn6' => [qw(d5f7 f8f7 e3e8 f7f8 f1f8)],
+    'mate-three-09usi' => [qw(f5e7 f8e7 e4h7 g8f8 h7h8)],
+    'mate-three-09vao' => [qw(h7g6 h8g8 h6h7 g8f8 h7f7)],
+    'mate-three-0a3ai' => [qw(g2g4 g1g4 h3g4 h5h4 b6h6)],
+);
 
 get '/' => sub {
     template 'index', { unlocked => session('academy_unlocked') ? 1 : 0 };
@@ -14,15 +23,16 @@ get '/' => sub {
 
 post '/api/chess/unlock' => sub {
     content_type 'application/json';
-    my $data = eval { decode_json(request->body // '') };
-    if ($@ || ref($data) ne 'HASH' || ($data->{puzzleId} // '') ne 'queen-sacrifice-001'
-        || ref($data->{line}) ne 'ARRAY' || @{$data->{line}} != @solution) {
+    my $data = eval { JSON::PP::decode_json(request->body // '') };
+    my $solution = ref($data) eq 'HASH' ? $solutions{$data->{puzzleId} // ''} : undef;
+    if ($@ || ref($data) ne 'HASH' || !$solution
+        || ref($data->{line}) ne 'ARRAY' || @{$data->{line}} != @$solution) {
         status 400;
-        return encode_json({ ok => JSON::PP::false, error => 'Invalid challenge submission' });
+        return JSON::PP::encode_json({ ok => JSON::PP::false, error => 'Invalid challenge submission' });
     }
-    for my $i (0 .. $#solution) {
+    for my $i (0 .. $#$solution) {
         if (!defined $data->{line}[$i] || ref($data->{line}[$i])
-            || $data->{line}[$i] ne $solution[$i]) {
+            || $data->{line}[$i] ne $solution->[$i]) {
             status 400;
             return encode_json({ ok => JSON::PP::false, error => 'Incorrect solution' });
         }
