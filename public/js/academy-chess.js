@@ -37,7 +37,14 @@ if (board && overlay && dismiss && notice) {
   try {
     const puzzles = await loadPuzzles();
     console.info('Academy checkmate-in-three puzzles loaded:', puzzles.map(p => p.id));
-    const puzzle = puzzles[Math.floor(Math.random() * puzzles.length)];
+    const savedIndex = Number(sessionStorage.getItem('academy-puzzle-index') || '0');
+    const puzzleIndex = Number.isInteger(savedIndex) && savedIndex >= 0 ? savedIndex % puzzles.length : 0;
+    const puzzle = puzzles[puzzleIndex];
+    const puzzleLabel = 'Puzzle ' + (puzzleIndex + 1) + ' of ' + puzzles.length + ' (' + puzzle.id + ')';
+    document.getElementById('academy-next-puzzle')?.addEventListener('click', () => {
+      sessionStorage.setItem('academy-puzzle-index', String((puzzleIndex + 1) % puzzles.length));
+      window.location.reload();
+    });
     const proof = new Chess(puzzle.fen);
     for (const uci of puzzle.line) {
       proof.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] || 'q' });
@@ -82,7 +89,7 @@ if (board && overlay && dismiss && notice) {
       });
     }
 
-    function resetPuzzle(message = solverName + ' to move. Checkmate in three moves. (Move 1 of 3)') {
+    function resetPuzzle(message = puzzleLabel + ' — ' + solverName + ' to move. Checkmate in three moves. (Move 1 of 3)') {
       clearTimeout(replyTimer);
       clearTimeout(resetTimer);
       game = new Chess(puzzle.fen);
@@ -263,7 +270,7 @@ if (board && overlay && dismiss && notice) {
     });
     document.getElementById('academy-board-reset')
       ?.addEventListener('click', () => resetPuzzle());
-    show(solverName + ' to move. Checkmate in three moves. (Move 1 of 3)');
+    show(puzzleLabel + ' — ' + solverName + ' to move. Checkmate in three moves. (Move 1 of 3)');
   } catch (error) {
     notice.textContent = 'Unable to start the chess challenge. Please refresh the page.';
     console.error('Academy chess challenge failed:', error);
