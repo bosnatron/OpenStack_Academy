@@ -185,6 +185,14 @@ if (board && overlay && dismiss && notice) {
       const selected = defensiveReply(candidates);
       const move = game.move(selected);
       played.push(uciOf(move));
+      if (game.isCheckmate()) {
+        failAttempt('The opponent checkmated you.');
+        return;
+      }
+      if (game.isGameOver()) {
+        failAttempt('The game ended without your checkmate.');
+        return;
+      }
       busy = false;
       redraw([move.from, move.to]);
       show('Your move ' + (solverMoves + 1) + ' of 3. Find checkmate.');
