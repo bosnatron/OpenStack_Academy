@@ -13,6 +13,7 @@
       </div>
     </div>
   </div>
+  <p><button id="academy-next-puzzle" type="button">Next puzzle →</button></p>
   <p id="academy-board-status" class="academy-board-status">Chessboard preview — puzzle validation and lesson unlocking are coming next.</p>
   <p class="academy-chess-credit">♟️ Powered by Chessground. Special thanks to the developers and contributors of <a href="https://lichess.org">Lichess</a>. GPL-3.0-or-later · <a href="https://github.com/lichess-org/chessground#readme">Original README</a> · <a href="https://github.com/lichess-org/chessground/blob/master/LICENSE">License</a> · <a href="https://github.com/bosnatron/chessground">Our fork</a> · <a href="https://github.com/bosnatron/OpenStack_Academy">Academy source</a>.</p>
 </section>
