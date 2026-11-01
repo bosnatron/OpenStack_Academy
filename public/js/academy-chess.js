@@ -37,14 +37,11 @@ if (board && overlay && dismiss && notice) {
   try {
     const puzzles = await loadPuzzles();
     console.info('Academy checkmate-in-three puzzles loaded:', puzzles.map(p => p.id));
-    const savedIndex = Number(sessionStorage.getItem('academy-puzzle-index') || '0');
-    const puzzleIndex = Number.isInteger(savedIndex) && savedIndex >= 0 ? savedIndex % puzzles.length : 0;
-    const puzzle = puzzles[puzzleIndex];
-    const puzzleLabel = 'Puzzle ' + (puzzleIndex + 1) + ' of ' + puzzles.length + ' (' + puzzle.id + ')';
-    document.getElementById('academy-next-puzzle')?.addEventListener('click', () => {
-      sessionStorage.setItem('academy-puzzle-index', String((puzzleIndex + 1) % puzzles.length));
-      window.location.reload();
-    });
+    const savedId = sessionStorage.getItem('academy-challenge-puzzle');
+    const puzzle = puzzles.find(p => p.id === savedId)
+      || puzzles[Math.floor(Math.random() * puzzles.length)];
+    sessionStorage.setItem('academy-challenge-puzzle', puzzle.id);
+    const puzzleLabel = 'Checkmate in three';
     const proof = new Chess(puzzle.fen);
     for (const uci of puzzle.line) {
       proof.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] || 'q' });
@@ -57,6 +54,8 @@ if (board && overlay && dismiss && notice) {
     const solverColor = game.turn();
     const solverName = solverColor === 'w' ? 'White' : 'Black';
     let solverMoves = 0;
+    let failedAttempts = Number(sessionStorage.getItem('academy-challenge-failures') || 0);
+    if (!Number.isInteger(failedAttempts) || failedAttempts < 0 || failedAttempts > 2) failedAttempts = 0;
     let played = [];
     let busy = false;
     let solved = false;
@@ -64,6 +63,29 @@ if (board && overlay && dismiss && notice) {
     let resetTimer;
     const uciOf = m => m.from + m.to + (m.promotion || '');
     const show = message => { notice.textContent = message; };
+    function failAttempt(reason) {
+      failedAttempts++;
+      sessionStorage.setItem('academy-challenge-failures', String(failedAttempts));
+      busy = true;
+      redraw(undefined);
+      if (failedAttempts >= 3) {
+        if (puzzles.length < 2) {
+          failedAttempts = 0;
+          sessionStorage.setItem('academy-challenge-failures', '0');
+          resetTimer = setTimeout(() => resetPuzzle('Three attempts used. No other verified puzzle available; try again.'), 1100);
+          return;
+        }
+        const alternatives = puzzles.filter(p => p.id !== puzzle.id);
+        const next = alternatives[Math.floor(Math.random() * alternatives.length)];
+        sessionStorage.setItem('academy-challenge-puzzle', next.id);
+        sessionStorage.setItem('academy-challenge-failures', '0');
+        show(reason + ' Three attempts used. Loading a new random puzzle...');
+        resetTimer = setTimeout(() => window.location.reload(), 1100);
+      } else {
+        show(reason + ' Attempt ' + failedAttempts + ' of 3 used.');
+        resetTimer = setTimeout(() => resetPuzzle('Attempt ' + (failedAttempts + 1) + ' of 3. Find checkmate.'), 1100);
+      }
+    }
 
     function destinations() {
       const result = new Map();
@@ -157,7 +179,7 @@ if (board && overlay && dismiss && notice) {
     function opponentReply() {
       const candidates = game.moves({ verbose: true });
       if (!candidates.length) {
-        resetPuzzle('No legal opponent reply. Puzzle reset — try again.');
+        failAttempt('No legal opponent reply.');
         return;
       }
       const selected = defensiveReply(candidates);
@@ -192,13 +214,12 @@ if (board && overlay && dismiss && notice) {
             detail: { puzzleId: puzzle.id, line: [...played] },
           }));
         } else {
-          show('No checkmate on move three. Resetting the puzzle...');
-          resetTimer = setTimeout(() => resetPuzzle('No checkmate in three. Try again.'), 1100);
+          failAttempt('No checkmate on move three.');
         }
         return;
       }
       if (game.isGameOver()) {
-        resetTimer = setTimeout(() => resetPuzzle('Game ended early. Try again.'), 900);
+        failAttempt('Game ended before move three.');
         return;
       }
       show('Opponent is choosing a defensive reply...');
@@ -268,9 +289,7 @@ if (board && overlay && dismiss && notice) {
       overlay.hidden = true;
       board.focus();
     });
-    document.getElementById('academy-board-reset')
-      ?.addEventListener('click', () => resetPuzzle());
-    show(puzzleLabel + ' — ' + solverName + ' to move. Checkmate in three moves. (Move 1 of 3)');
+    show(puzzleLabel + ' — ' + solverName + ' to move. Attempt ' + (failedAttempts + 1) + ' of 3.');
   } catch (error) {
     notice.textContent = 'Unable to start the chess challenge. Please refresh the page.';
     console.error('Academy chess challenge failed:', error);
