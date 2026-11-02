@@ -1,0 +1,10 @@
+.git
+.env
+.env.*
+local
+logs
+log
+blib
+Makefile
+MYMETA.*
+*.log
