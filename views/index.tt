@@ -16,6 +16,12 @@
   <p id="academy-board-status" class="academy-board-status">Solve checkmate in three. Three attempts per puzzle.</p>
   <p class="academy-chess-credit">♟️ Powered by Chessground. Special thanks to the developers and contributors of <a href="https://lichess.org">Lichess</a>. GPL-3.0-or-later · <a href="https://github.com/lichess-org/chessground#readme">Original README</a> · <a href="https://github.com/lichess-org/chessground/blob/master/LICENSE">License</a> · <a href="https://github.com/bosnatron/chessground">Our fork</a> · <a href="https://github.com/bosnatron/OpenStack_Academy">Academy source</a>.</p>
 </section>
+<section class="smart-chat-preview" aria-labelledby="smart-chat-title">
+  <h2 id="smart-chat-title">Smart_Chat</h2>
+  <button id="smart-chat-button" type="button" aria-expanded="false" aria-controls="smart-chat-notice">Smart_Chat</button>
+  <p id="smart-chat-notice" role="status" hidden>Under construction — preview coming soon.</p>
+</section>
+<script src="/js/smart-chat-preview.js" defer></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.base.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.brown.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.cburnett.css">

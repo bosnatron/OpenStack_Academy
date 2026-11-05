@@ -1,0 +1,23 @@
+# Private visitor activity and local runtime state never leave this machine.
+data_local/
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+*.sqlite-*
+*.sqlite3-*
+*.db-*
+*-db-backup.sql
+*-db-dump.sql
+*.dump
+*.backup
+*.bak
+.env
+.env.*
+!.env.example
+.DS_Store
+/Makefile
+/MYMETA.json
+/MYMETA.yml
+/blib/
+/pm_to_blib

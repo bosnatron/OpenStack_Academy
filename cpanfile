@@ -1,4 +1,6 @@
 requires "Dancer2" => "0.203001";
+requires "DBI";
+requires "DBD::SQLite";
 
 recommends "YAML"             => "0";
 recommends "URL::Encode::XS"  => "0";

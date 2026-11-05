@@ -1,13 +1,38 @@
-# Academy persistent visitor cookie and BV monitoring boundary
+# Academy visitor collection and Academy_Agent
 
-**Status:** Perl/SQLite cookie helper, PSGI middleware and unit tests are on the feature branch. The middleware is **opt-in**; live BV monitoring is not connected.
+The collector belongs to OpenStack_Academy. Personal Bright Vale is not a
+visitor service and its database is never a monitoring source.
 
-Academy owns issuing, validating and renewing the browser's anonymous cookie. It does not deliberately delete cookie records. Browser storage and cookie expiration remain outside Academy's control. Default Max-Age is 365 days, renewed on each request.
+Set `ACADEMY_VISITOR_DB` to a private local SQLite path before manually
+launching `bin/app.psgi` through Plack. The middleware creates missing parent
+directories with mode 0700 and new database files with mode 0600. Without the
+variable, collection is off. Existing cookie and conversation databases are
+not migrated, deleted or imported into a different application.
 
-To enable locally, configure ACADEMY_VISITOR_DB with an **existing writable private directory** and on-disk SQLite file path before starting the Academy PSGI app. Example: \`ACADEMY_VISITOR_DB=/private/path/academy-visitors.sqlite\`. Without that variable, the existing Academy behavior is preserved.
+`Academy::VisitorCookie` validates a 64-hex random cookie against
+`academy_visitor_cookies`, then renews its 365-day expiry. The HttpOnly,
+SameSite=Lax cookie is Secure on HTTPS. Existing Dancer session cookies remain
+separate. Trusted proxy configuration must establish `psgi.url_scheme`.
 
-The middleware wraps \`Web->to_app\` in \`bin/app.psgi\`, validates the \`academy_visitor\` cookie against Academy's SQLite registry, refreshes the expiry and appends a Set-Cookie response header without overwriting Dancer2's session cookie. It adds the validated metadata to the private PSGI environment key \`academy.visitor\`, not to the public response. For HTTPS, \`Secure\` is set based on \`psgi.url_scheme\`; reverse proxies must set that trusted scheme correctly. Do not trust arbitrary client-supplied forwarded headers.
+`Academy::VisitorActivity` appends request timestamps, sanitized paths, methods,
+statuses, time until headers are ready and an HTML-GET page-view flag to
+`academy_visitor_activity`. Its browser key is SHA256 of the validated cookie,
+not the bearer-cookie value. Query strings, bodies and authorization headers
+are excluded. Array responses, delayed responders and application exceptions
+are recorded. A logging failure warns without replacing the website response.
 
-BV may receive the **validated** visitor ID and timestamps through an explicitly authorized local interface; it must not issue browser cookies, accept unvalidated client IDs or expose the SQLite file publicly. **The BV monitoring integration is still pending**. The browser identity is not proof of a unique human and may be lost when a browser clears its data.
+Academy_Agent opens the configured source with SQLite read-only flags and
+query_only, using a deferred read transaction. Its loopback dashboard is on
+8084; it requires no model, chat history or personal BV services. It shows
+24-hour request/page/browser/error counts, browsers observed in the last five
+minutes, recent requests and path/browser summaries. A missing source or old
+registry-only source is reported, never invented as live activity.
 
-Run: \`prove -Ilib -v t/visitor_cookie.t t/visitor_middleware.t\`. Full Dancer2 integration and live browser testing remain to be done. The chess entrance challenge and existing \`lib/Web.pm\` are unchanged.
+Cookie labels do not establish identity. These are HTTP observations, not a
+record of every client action or exact time on page. Response-ready timing does
+not include full streaming transfer or time spent reading. No automatic bans,
+deletion, service launch or restart is enabled. Data remains local and ignored
+by Git. Choose a retention/archive policy separately before sustained public use.
+
+Smart_Chat is a construction placeholder only. Future requirements are in the
+README and do not authorize implementing a chat backend in this change.

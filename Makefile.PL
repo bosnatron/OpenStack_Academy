@@ -10,8 +10,8 @@ $eumm_version =~ s/_//;
 WriteMakefile(
     NAME                => 'Web',
     AUTHOR              => q{YOUR NAME <youremail@example.com>},
-    VERSION_FROM        => 'lib/MyApp.pm',
-    ABSTRACT            => 'YOUR APPLICATION ABSTRACT',
+    VERSION_FROM        => 'lib/Web.pm',
+    ABSTRACT            => 'OpenStack Academy learning website and visitor collection',
     ($eumm_version >= 6.3001
       ? ('LICENSE'=> 'perl')
       : ()),
@@ -20,6 +20,8 @@ WriteMakefile(
         'Test::More' => 0,
         'YAML'       => 0,
         'Dancer2'     => 0.203001,
+        'DBI'        => 0,
+        'DBD::SQLite' => 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'MyApp-*' },

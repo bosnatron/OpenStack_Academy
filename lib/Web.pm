@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use Dancer2;
 use JSON::PP ();
+our $VERSION = '0.2.0';
 
 # First challenge: require the complete known legal checkmate line.
 # This is an entrance challenge, not an anti-cheat chess engine.
@@ -89,5 +90,4 @@ post '/api/bv/message' => sub {
 get '/login'  => sub { redirect '/' };
 get '/logout' => sub { redirect '/' };
 
-dance;
 1;
