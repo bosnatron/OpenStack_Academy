@@ -1,12 +1,12 @@
 <% IF !unlocked %>
 <section class="academy-gate" aria-label="Academy chess entrance">
-  <div class="academy-gate-heading"><span>♟️ OPENSTACK ACADEMY</span><span>Entrance challenge</span></div>
+  <div class="academy-gate-heading"><span>♟️ BOSNATRON ACADEMY</span><span>Entrance challenge</span></div>
   <div class="academy-board-wrap">
     <div id="academy-chessboard" class="academy-chessboard" tabindex="-1" aria-label="Chessground chessboard"></div>
     <div id="academy-welcome" class="academy-welcome">
       <div class="academy-welcome-panel">
         <button id="academy-welcome-close" class="academy-welcome-close" type="button" aria-label="Close welcome message and reveal chessboard">×</button>
-        <h1>Welcome to OpenStack Academy!</h1>
+        <h1>Welcome to Bosnatron Academy!</h1>
         <p class="academy-welcome-lead">Solve the chess challenge to earn your access key.</p>
         <p>Checkmate in 3 moves.</p>
         <p class="academy-welcome-help">Click X to reveal the chessboard and begin.</p>
@@ -31,7 +31,7 @@
 <section class="hero">
   <p class="eyebrow">Open-source technology education</p>
   <h1>Learn by building.</h1>
-  <p>OpenStack Academy offers practical lessons in Linux, development, databases, and open-source tools.</p>
+  <p>Bosnatron Academy offers practical lessons in Linux, development, databases, and open-source tools.</p>
   <p class="motto">TIMTOWTDI — With Perl, hard jobs are possible.</p>
 </section>
 <section aria-labelledby="lessons-title">

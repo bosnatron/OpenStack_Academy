@@ -1,4 +1,4 @@
-# OpenStack Academy — local Dancer2 application
+# Bosnatron Academy — local Dancer2 application
 appname: "Web"
 layout: "main"
 charset: "UTF-8"

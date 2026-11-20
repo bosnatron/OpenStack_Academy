@@ -1,5 +1,5 @@
 <section class="academy-lesson" lang="bs">
-<div class="academy"><article class="lesson"><p>OpenStack Academy · Lekcija 8</p><h1>Dancer2 – web aplikacije u Perlu</h1><p><strong>Dancer2</strong> je Perl okvir za izradu web aplikacija. Omogućava da jednostavno povežeš URL adresu s Perl kodom koji priprema odgovor.</p><h2>Osnovna aplikacija</h2><p>Instalacija (ako koristiš <code>cpanm</code>):</p><pre><code>cpanm Dancer2</code></pre><p>Sačuvaj ovaj kod u datoteku <code>app.pl</code>:</p><pre><code>use strict;
+<div class="academy"><article class="lesson"><p>Bosnatron Academy · Lekcija 8</p><h1>Dancer2 – web aplikacije u Perlu</h1><p><strong>Dancer2</strong> je Perl okvir za izradu web aplikacija. Omogućava da jednostavno povežeš URL adresu s Perl kodom koji priprema odgovor.</p><h2>Osnovna aplikacija</h2><p>Instalacija (ako koristiš <code>cpanm</code>):</p><pre><code>cpanm Dancer2</code></pre><p>Sačuvaj ovaj kod u datoteku <code>app.pl</code>:</p><pre><code>use strict;
 use warnings;
 use Dancer2;
 
@@ -15,5 +15,5 @@ get '/pozdrav/:ime' =&gt; sub {
 start;</code></pre><p>Pokreni aplikaciju:</p><pre><code>perl app.pl</code></pre><p>Otvori adresu koju server prikaže u Terminalu. Ruta <code>/</code> prikazuje početnu poruku, a <code>/pozdrav/Amina</code> koristi vrijednost iz URL-a.</p><h2>GET i POST</h2><p><code>GET</code> se obično koristi za prikaz podataka, a <code>POST</code> za slanje podataka iz obrasca.</p><pre><code>post '/poruka' =&gt; sub {
     my $tekst = body_parameters-&gt;get('tekst') // '';
     return "Primljena poruka: $tekst";
-};</code></pre><p>Za stvarne aplikacije potrebno je provjeravati ulazne podatke, voditi računa o sigurnosti i pravilno prikazivati korisnički tekst u HTML-u. <strong>Vježba:</strong> dodaj rutu <code>/o-nama</code> koja prikazuje kratku poruku o tvojoj aplikaciji.</p><nav aria-label="Ostale lekcije" class="links"><a href="/Step06">Perl</a><a href="/Step07">CPAN</a><a aria-current="page" href="/Step08">Dancer2</a><a href="/Step09">Git i GitHub</a></nav></article><nav aria-label="Lesson navigation" class="academy-nav-next"><a class="academy-nav-button" href="/Step09">Next →</a></nav></div>
+};</code></pre><p>Za stvarne aplikacije potrebno je provjeravati ulazne podatke, voditi računa o sigurnosti i pravilno prikazivati korisnički tekst u HTML-u. <strong>Vježba:</strong> dodaj rutu <code>/o-nama</code> koja prikazuje kratku poruku o tvojoj aplikaciji.</p><nav aria-label="Ostale lekcije" class="links"><a href="/Step06">Perl</a><a href="/Step07">CPAN</a><a aria-current="page" href="/Step08">Dancer2</a><a href="/Step09">Git i GitHub</a></nav></article></div>
 </section>

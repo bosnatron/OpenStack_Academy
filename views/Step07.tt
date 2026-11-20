@@ -1,5 +1,5 @@
 <section class="academy-lesson" lang="bs">
-<div class="academy"><article class="lesson"><p>OpenStack Academy · Lekcija 7</p><h1>CPAN – Perl moduli</h1><p><strong>CPAN</strong> (Comprehensive Perl Archive Network) je velika zbirka Perl modula. Modul je gotova biblioteka koju možeš koristiti umjesto da sve pišeš od početka.</p><h2>Pretraživanje i instalacija</h2><p>Module možeš pronaći na <a href="https://metacpan.org/">MetaCPAN-u</a>. U Terminalu možeš koristiti standardni CPAN klijent:</p><pre><code>cpan App::cpanminus
+<div class="academy"><article class="lesson"><p>Bosnatron Academy · Lekcija 7</p><h1>CPAN – Perl moduli</h1><p><strong>CPAN</strong> (Comprehensive Perl Archive Network) je velika zbirka Perl modula. Modul je gotova biblioteka koju možeš koristiti umjesto da sve pišeš od početka.</p><h2>Pretraživanje i instalacija</h2><p>Module možeš pronaći na <a href="https://metacpan.org/">MetaCPAN-u</a>. U Terminalu možeš koristiti standardni CPAN klijent:</p><pre><code>cpan App::cpanminus
 cpan JSON::PP</code></pre><p>Ako je <code>cpanm</code> instaliran, instalacija je kraća:</p><pre><code>cpanm Try::Tiny
 perl -MTry::Tiny -e 'print "Modul je dostupan\n"'</code></pre><p>Na nekim računarima potrebne su dodatne dozvole ili lokalna Perl instalacija. Nemoj nasumično koristiti <code>sudo</code>.</p><h2>Korištenje modula</h2><pre><code>use strict;
 use warnings;
@@ -9,5 +9,5 @@ my $tekst = encode_json({ ime =&gt; 'Amina', bodovi =&gt; 10 });
 print "$tekst\n";
 
 my $podaci = decode_json($tekst);
-print "$podaci-&gt;{ime}\n";</code></pre><p><code>use</code> učitava modul, a <code>qw(...)</code> navodi funkcije koje uvozimo. <strong>Vježba:</strong> pronađi jedan modul na MetaCPAN-u, pročitaj njegov opis i napiši mali primjer upotrebe.</p><nav aria-label="Ostale lekcije" class="links"><a href="/Step06">Perl</a><a aria-current="page" href="/Step07">CPAN</a><a href="/Step08">Dancer2</a><a href="/Step09">Git i GitHub</a></nav></article><nav aria-label="Lesson navigation" class="academy-nav-next"><a class="academy-nav-button" href="/Step08">Next →</a></nav></div>
+print "$podaci-&gt;{ime}\n";</code></pre><p><code>use</code> učitava modul, a <code>qw(...)</code> navodi funkcije koje uvozimo. <strong>Vježba:</strong> pronađi jedan modul na MetaCPAN-u, pročitaj njegov opis i napiši mali primjer upotrebe.</p><nav aria-label="Ostale lekcije" class="links"><a href="/Step06">Perl</a><a aria-current="page" href="/Step07">CPAN</a><a href="/Step08">Dancer2</a><a href="/Step09">Git i GitHub</a></nav></article></div>
 </section>

@@ -282,7 +282,7 @@ if (board && overlay && dismiss && notice) {
         subtitle.textContent = 'Access Granted';
         subtitle.style.cssText = 'margin:0;color:#9ee6b4;font-size:clamp(24px,4vw,34px);font-weight:700';
         const welcome = document.createElement('p');
-        welcome.textContent = 'Welcome to OpenStack Academy';
+        welcome.textContent = 'Welcome to Bosnatron Academy';
         welcome.style.cssText = 'margin:0;color:#cbd5e1;font-size:16px';
         celebration.append(icon, heading, subtitle, welcome);
         document.body.appendChild(celebration);

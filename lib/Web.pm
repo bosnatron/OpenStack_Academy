@@ -19,7 +19,9 @@ my %solutions = (
 );
 
 get '/' => sub {
-    template 'index', { unlocked => session('academy_unlocked') ? 1 : 0 };
+    my $unlocked = session('academy_unlocked') ? 1 : 0;
+    template 'index', { unlocked => $unlocked,
+        next_page => $unlocked ? '/Step01' : undef };
 };
 
 post '/api/chess/unlock' => sub {
@@ -46,7 +48,11 @@ for my $number (1 .. 9) {
     my $name = sprintf 'Step%02d', $number;
     get "/$name" => sub {
         return redirect '/' unless session('academy_unlocked');
-        return template $name;
+        return template $name, {
+            previous_page => $number == 1 ? '/' : sprintf('/Step%02d', $number - 1),
+            next_page => $number == 9 ? '/' : sprintf('/Step%02d', $number + 1),
+            last_lesson => $number == 9 ? 1 : 0,
+        };
     };
 }
 

@@ -11,7 +11,7 @@ WriteMakefile(
     NAME                => 'Web',
     AUTHOR              => q{YOUR NAME <youremail@example.com>},
     VERSION_FROM        => 'lib/Web.pm',
-    ABSTRACT            => 'OpenStack Academy learning website and visitor collection',
+    ABSTRACT            => 'Bosnatron Academy learning website and visitor collection',
     ($eumm_version >= 6.3001
       ? ('LICENSE'=> 'perl')
       : ()),

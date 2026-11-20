@@ -13,7 +13,7 @@ test_psgi app => $app, client => sub {
     my $cb = shift;
     my $home = $cb->(GET '/');
     is($home->code, 200, 'homepage available without login');
-    like($home->content, qr/OpenStack Academy/, 'homepage has site title');
+    like($home->content, qr/Bosnatron Academy/, 'homepage has site title');
     for my $n (1 .. 9) {
         my $path = sprintf '/Step%02d', $n;
         my $res = $cb->(GET $path);

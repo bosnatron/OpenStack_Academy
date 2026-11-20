@@ -1,5 +1,5 @@
 <section class="academy-lesson" lang="bs">
-<div class="academy"><article class="lesson"><p>OpenStack Academy · Lekcija 9</p><h1>Git i GitHub – kontrola verzija</h1><p><strong>Git</strong> prati historiju izmjena u projektu na tvom računaru. <strong>GitHub</strong> je online platforma na kojoj možeš čuvati Git repozitorije i sarađivati s drugim programerima.</p><h2>Prvi repozitorij</h2><pre><code>mkdir moj-projekat
+<div class="academy"><article class="lesson"><p>Bosnatron Academy · Lekcija 9</p><h1>Git i GitHub – kontrola verzija</h1><p><strong>Git</strong> prati historiju izmjena u projektu na tvom računaru. <strong>GitHub</strong> je online platforma na kojoj možeš čuvati Git repozitorije i sarađivati s drugim programerima.</p><h2>Prvi repozitorij</h2><pre><code>mkdir moj-projekat
 cd moj-projekat
 git init
 git status
@@ -12,5 +12,5 @@ git commit -m "Dodana lekcija"
 git switch main</code></pre><p>Grana omogućava da radiš na novoj funkciji bez direktnog uređivanja glavne grane. Glavna grana se može zvati <code>main</code> ili <code>master</code>, zavisno od repozitorija.</p><h2>Povezivanje s GitHubom</h2><pre><code>git remote -v
 git fetch origin
 git pull
-git push -u origin nova-lekcija</code></pre><p><code>fetch</code> preuzima informacije o udaljenim izmjenama, <code>pull</code> ih uključuje u trenutnu granu, a <code>push</code> šalje tvoje commitove na udaljeni repozitorij. Za slanje je potrebno podesiti GitHub pristup. <strong>Vježba:</strong> napravi novu granu, dodaj datoteku README.md, napravi commit i pogledaj historiju.</p><nav aria-label="Ostale lekcije" class="links"><a href="/Step06">Perl</a><a href="/Step07">CPAN</a><a href="/Step08">Dancer2</a><a aria-current="page" href="/Step09">Git i GitHub</a></nav></article><nav aria-label="Lesson navigation" class="academy-nav-next"><a class="academy-nav-button" href="/">Finish · Home →</a></nav></div>
+git push -u origin nova-lekcija</code></pre><p><code>fetch</code> preuzima informacije o udaljenim izmjenama, <code>pull</code> ih uključuje u trenutnu granu, a <code>push</code> šalje tvoje commitove na udaljeni repozitorij. Za slanje je potrebno podesiti GitHub pristup. <strong>Vježba:</strong> napravi novu granu, dodaj datoteku README.md, napravi commit i pogledaj historiju.</p><nav aria-label="Ostale lekcije" class="links"><a href="/Step06">Perl</a><a href="/Step07">CPAN</a><a href="/Step08">Dancer2</a><a aria-current="page" href="/Step09">Git i GitHub</a></nav></article></div>
 </section>

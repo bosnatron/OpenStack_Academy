@@ -1,4 +1,4 @@
-# OpenStack_Academy
+# Bosnatron Academy
 
 A local Dancer2 learning website with a chess entrance challenge and lessons.
 The personal Bright Vale assistant is a separate project. Academy_Agent is a
@@ -84,3 +84,15 @@ Validation for this appearance update: the existing Perl suite passed
 for consistent headings, a single main region, and horizontal overflow.
 The cloud proxy blocked the external Wikimedia image, so its loading must be
 checked in a browser with access to that host.
+
+Lesson navigation is rendered once by the shared layout, after the complete
+lesson: Previous at the left and Next at the right. The unlocked lesson index
+has Next to start Step01; Step09 finishes at the index. The locked chess
+entrance has no back arrow or lesson navigation.
+
+The displayed site name is **Bosnatron Academy**. The repository and local
+folder remain `OpenStack_Academy`, so existing paths and launch commands work.
+
+The footer links to `/license.html`, documenting the existing `perl` license
+declaration in `Makefile.PL`, Chessground's GPL-3.0-or-later license, and the
+penguin's source. Third-party credits remain intact.

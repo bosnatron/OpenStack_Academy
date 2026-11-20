@@ -37,7 +37,9 @@ nav.links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; padding
 nav.links a, .academy-nav-button, .smart-chat-preview button { display: inline-block; padding: 10px 18px; color: #B5E8B8; background: #29412E; border: 1px solid #618C6B; border-radius: 9px; font-family: inherit; font-size: 1rem; line-height: 1.4; font-weight: 700; text-decoration: none; }
 .smart-chat-preview button { cursor: pointer; }
 nav.links a[aria-current=page] { font-weight: 700; border-color: #ACF2AE; }
-.academy-nav-next { display: flex; justify-content: flex-end; clear: both; margin-top: 32px; }
+.lesson-navigation { display: flex; align-items: center; justify-content: space-between; gap: 16px; clear: both; margin-top: 32px; }
+.lesson-next { margin-left: auto; }
+.header-inner nav { order: -1; }
 .academy-lesson .topic { margin-block: 14px; padding: 18px; border: 1px solid #394D3D; border-radius: 9px; }
 .site-footer { position: relative; z-index: 2; padding: 1rem 0 3rem; color: #99C5A0; font-size: 11px; text-align: center; }
 .slackware-penguin { position: fixed; z-index: 4; left: 18px; bottom: 32px; display: block; width: clamp(88px,13vw,152px); height: auto; object-fit: contain; filter: drop-shadow(0 5px 5px #0004); pointer-events: none; }

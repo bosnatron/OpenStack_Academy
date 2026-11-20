@@ -1,5 +1,5 @@
 <section class="academy-lesson" lang="bs">
-<div class="academy"><article class="lesson"><p>OpenStack Academy · Lekcija 6</p><h1>Perl – osnove</h1><p>Perl je programski jezik pogodan za automatizaciju, obradu teksta, rad s datotekama i web aplikacije. Programi se obično čuvaju u datotekama s nastavkom <code>.pl</code>.</p><h2>Prvi koraci</h2><pre><code>perl -v
+<div class="academy"><article class="lesson"><p>Bosnatron Academy · Lekcija 6</p><h1>Perl – osnove</h1><p>Perl je programski jezik pogodan za automatizaciju, obradu teksta, rad s datotekama i web aplikacije. Programi se obično čuvaju u datotekama s nastavkom <code>.pl</code>.</p><h2>Prvi koraci</h2><pre><code>perl -v
 perl -e 'print "Zdravo, svijete!\n";'
 perl -c program.pl
 perl program.pl</code></pre><p>Opcija <code>-v</code> prikazuje verziju, <code>-e</code> izvršava kratki kod, a <code>-c</code> provjerava sintaksu bez pokretanja programa.</p><h2>Varijable i strukture podataka</h2><pre><code>use strict;
@@ -24,5 +24,5 @@ open my $fh, '&lt;', 'podaci.txt' or die $!;
 while (my $red = &lt;$fh&gt;) {
     print $red;
 }
-close $fh;</code></pre><p>Za početak koristi <code>strict</code> i <code>warnings</code> u svakoj skripti. <strong>Vježba:</strong> napiši program koji ispisuje tvoje ime, tri omiljena jezika i sadržaj jedne tekstualne datoteke.</p><nav aria-label="Ostale lekcije" class="links"><a aria-current="page" href="/Step06">Perl</a><a href="/Step07">CPAN</a><a href="/Step08">Dancer2</a><a href="/Step09">Git i GitHub</a></nav></article><nav aria-label="Lesson navigation" class="academy-nav-next"><a class="academy-nav-button" href="/Step07">Next →</a></nav></div>
+close $fh;</code></pre><p>Za početak koristi <code>strict</code> i <code>warnings</code> u svakoj skripti. <strong>Vježba:</strong> napiši program koji ispisuje tvoje ime, tri omiljena jezika i sadržaj jedne tekstualne datoteke.</p><nav aria-label="Ostale lekcije" class="links"><a aria-current="page" href="/Step06">Perl</a><a href="/Step07">CPAN</a><a href="/Step08">Dancer2</a><a href="/Step09">Git i GitHub</a></nav></article></div>
 </section>
