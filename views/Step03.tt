@@ -1,148 +1,94 @@
+<section class="academy-lesson" lang="bs">
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+<h1>Vim</h1>
+<h2 class="featured-subtitle">Osnove </h2>
+<p>Predite u home i iz home u vase ime</p>
+<p>Mora da ima u /home isto ime foldera kako ste nazvali user</p>
+<p>cd /</p>
+<p>cd /home/vas_user_name</p>
+<p>Zaboravio sam nesto</p>
+<p>Kucajte ovako</p>
+<p>setterm -foreground red(Enter)</p>
+<p>setterm -store(Enter)</p>
+<p>Bolje???</p>
+<p>Zapamtite to za ubuduce</p>
+<h1>VIM</h1>
+<p>Kucajte: vim (malim slovima)</p>
+<p>Sada se nalazimo u vim editoru</p>
+<p>Kada zelimo da tipkamo u vim-u</p>
+<p>Tada stisnemo slovo i</p>
+<p> i=insert</p>
+<p>Kliknite i ,pa zatim tipkajte nesto</p>
+<p>Ide li to :)</p>
+<p>Sve radi ako ste pogrijesili Backspace radi fino (brisanje) i sve sve ostalo</p>
+<p>Ali sada treba da zavrsimo sta smo utipkali</p>
+<p>Idemo na gore lijevo Esc tipku i stisnemo tipku :)</p>
+<p>Zakljucali smo sve sto smo tipkali</p>
+<p>Nemojte sad da klikate po tastaturi sva slova, polako</p>
+<p>(i) je za insert lijevo na trenutnoj poziciji gdje se nalazi kursor</p>
+<p>Ako kliknemo a</p>
+<p>Tada je insert jedno polje na desno</p>
+<p>Slovo o ide u liniju ispod i aktivira insert</p>
+<p>Slovo o gura trenutni text ispod aktivira insert i ostaje u toj liniji</p>
+<p>Uvijek kad zavrsimo sa insertovanjem, obavezno Esc</p>
+<p>Ako kliknemo x tada instantno brisemo to polje(Slovo-Znak)</p>
+<p>x brise ali insert nije aktiviran</p>
+<p>x brise samo jedno slovo ili znak</p>
+<p>Npr. kada se nalazimo na jednoj liniji texta</p>
+<p>Prvo kliknite (i) i ukucajte bilo sta i stsnite Esc</p>
+<p>Sada ako niste na toj liniji idi te na tu liniju</p>
+<p>Kretanje obavljate sa J na dole, moze i sa strelice ali NE</p>
+<p>Kretanje na gore k</p>
+<p>Lijevo L(tipka) ako ima nesto lijevo</p>
+<p>Desno je h</p>
+<p>Znaci sva 4 prsta su vam u toj liniji</p>
+<p>Obavezno kaziprst desne ruke neka je na slovo J</p>
+<p>Obavezno kaziprst lijeve ruke neka je na F</p>
+<p>Mora tako i drugacije ne moze bit</p>
+<p>E sada kada se nalazimo na toj liniji gdje ste nesto utipkali</p>
+<p>Kliknite dva uputa slovo d</p>
+<p>Obrisali smo cijeli text u toj liniji a insert nije aktiviran</p>
+<p>Ako vam se desi da slucajno kliknete dd-tada samo slovo p(kao paste)</p>
+<p>Sledece ajd nesto utipkajte vjezbajte kretanje Esc i tako</p>
+<p>Sada kada imate neki text nesto smo napisali</p>
+<p>Sada treba to da snimimo i da sacuvamo, jel?</p>
+<p>Prvo kliknemo Esc da zakljucamo dokument</p>
+<p>Stisnemo tipku Shift(drzimo stisnutu) i klikneno dvotacku (:)</p>
+<p>Dvotacku (:) mora sada da imamo dole lijevo u editoru prikazanu</p>
+<p>Zatim: wq ime</p>
+<h2>:wq ime(Tako)</h2>
+<p>Ako ste kucali ime sada samo utipkajte ls</p>
+<p>I vidit cete u vasem folderu fajl pod imenom ime</p>
+<p>Da bi otvorili taj fajl kucamo:</p>
+<h2>vim ime</h2>
+<p>Ako otvorimo neki fajl da citamo iz njega</p>
+<p>Tada izlazimo iz fajla i ako smo slucjano nesto utipkali</p>
+<p>Samo Shift dvotacka i zatim q!(Ovako--&gt; :q!)</p>
+<p>Tada ide force quit - bez promjene</p>
+<p>Obavezno malo q</p>
+<p>Sada ste spremni za razgledanje po fajlovima :)</p>
+<p>Sto se mene tice znate osnovu,na vama dalje da ucite, pogledajte ispod.</p>
+</div>
 
-<nav class="academy-nav-home" aria-label="Lesson home"><a class="academy-nav-button" href="/">⌂ Home</a></nav>
-<div id="page">
-<div id ="sidebar">
-<ul id="sidebar-items">  
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-<style>
-body {
-    background-color: #ad865c;
-}
-</style>
-
-<body>
-
-
-    <div class="container theme-showcase" role="main">
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Vim</h1>
-        <h2 class="featured-subtitle">Osnove </h2>
-
-			
-			   		
-			   		<p>Predite u home i iz home u vase ime</p>
-			   		<p>Mora da ima u /home isto ime foldera kako ste nazvali user</p>
-			   		<p>cd /</p>
-			   		<p>cd /home/vas_user_name</p>
-			   		<p>Zaboravio sam nesto</p>
-			   		<p>Kucajte ovako</p>
-			   		<p>setterm -foreground red(Enter)</p>
-			   		<p>setterm -store(Enter)</p>
-			   		<p>Bolje???</p>
-			   		<p>Zapamtite to za ubuduce</p>
-			   		<h1>VIM</h1>
-			   		<p>Kucajte: vim (malim slovima)</p>
-			   		<p>Sada se nalazimo u vim editoru</p>
-			   		<p>Kada zelimo da tipkamo u vim-u</p>
-			   		<p>Tada stisnemo slovo i</p>
-			   		<p> i=insert</p>
-			   		<p>Kliknite i ,pa zatim tipkajte nesto</p>
-			   		<p>Ide li to :)</p>
-			   		<p>Sve radi ako ste pogrijesili Backspace radi fino (brisanje) i sve sve ostalo</p>
-			   		<p>Ali sada treba da zavrsimo sta smo utipkali</p>
-			   		<p>Idemo na gore lijevo Esc tipku i stisnemo tipku :)</p>
-			   		<p>Zakljucali smo sve sto smo tipkali</p>
-			   		<p>Nemojte sad da klikate po tastaturi sva slova, polako</p>
-			   		<p>(i) je za insert lijevo na trenutnoj poziciji gdje se nalazi kursor</p>
-			   		<p>Ako kliknemo a</p>
-			   		<p>Tada je insert jedno polje na desno</p>
-			   		<p>Slovo o ide u liniju ispod i aktivira insert</p>
-			   		<p>Slovo o gura trenutni text ispod aktivira insert i ostaje u toj liniji</p>
-			   		<p>Uvijek kad zavrsimo sa insertovanjem, obavezno Esc</p>
-			   		<p>Ako kliknemo x tada instantno brisemo to polje(Slovo-Znak)</p>
-			   		<p>x brise ali insert nije aktiviran</p>
-			   		<p>x brise samo jedno slovo ili znak</p>
-			   		<p>Npr. kada se nalazimo na jednoj liniji texta</p>
-			   		<p>Prvo kliknite (i) i ukucajte bilo sta i stsnite Esc</p>
-			   		<p>Sada ako niste na toj liniji idi te na tu liniju</p>
-			   		<p>Kretanje obavljate sa J na dole, moze i sa strelice ali NE</p>
-			   		<p>Kretanje na gore k</p>
-			   		<p>Lijevo L(tipka) ako ima nesto lijevo</p>
-			   		<p>Desno je h</p>
-			   		<p>Znaci sva 4 prsta su vam u toj liniji</p>
-			   		<p>Obavezno kaziprst desne ruke neka je na slovo J</p>
-			   		<p>Obavezno kaziprst lijeve ruke neka je na F</p>
-			   		<p>Mora tako i drugacije ne moze bit</p>
-			   		<p>E sada kada se nalazimo na toj liniji gdje ste nesto utipkali</p>
-			   		<p>Kliknite dva uputa slovo d</p>
-			   		<p>Obrisali smo cijeli text u toj liniji a insert nije aktiviran</p>
-			   		<p>Ako vam se desi da slucajno kliknete dd-tada samo slovo p(kao paste)</p>
-			   		
-			   		<p>Sledece ajd nesto utipkajte vjezbajte kretanje Esc i tako</p>
-			   		<p>Sada kada imate neki text nesto smo napisali</p>
-			   		<p>Sada treba to da snimimo i da sacuvamo, jel?</p>
-			   		<p>Prvo kliknemo Esc da zakljucamo dokument</p>
-			   		<p>Stisnemo tipku Shift(drzimo stisnutu) i klikneno dvotacku (:)</p>
-			   		<p>Dvotacku (:) mora sada da imamo dole lijevo u editoru prikazanu</p>
-			   		<p>Zatim: wq ime</p>
-			   		<h2>:wq ime(Tako)</h2>
-			   		<p>Ako ste kucali ime sada samo utipkajte ls</p>
-			   		<p>I vidit cete u vasem folderu fajl pod imenom ime</p>
-			   		<p>Da bi otvorili taj fajl kucamo:</p>
-			   		<h2>vim ime</h2>
-			   		<p>Ako otvorimo neki fajl da citamo iz njega</p>
-			   		<p>Tada izlazimo iz fajla i ako smo slucjano nesto utipkali</p>
-			   		<p>Samo Shift dvotacka i zatim q!(Ovako--> :q!)</p>
-			   		<p>Tada ide force quit - bez promjene</p>
-			   		<p>Obavezno malo q</p>
-			   		<p>Sada ste spremni za razgledanje po fajlovima :)</p>
-			   		<p>Sto se mene tice znate osnovu,na vama dalje da ucite, pogledajte ispod.</p>
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   				
-
-      </div>
-
-    </div> <!-- /container -->
-
+<!-- /container -->
 <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>VIM</h2>
-          <p>Mnogo bolje objasnjeno.</p>
-          <p>Mada mozete i sami da 
+<!-- Example row of columns -->
+<div class="row">
+<div class="col-md-4">
+<h2>VIM</h2>
+<p>Mnogo bolje objasnjeno.</p>
+<p>Mada mozete i sami da
           potrazite na Google</p>
-          <p>Kliknite ispod</p>
+<p>Kliknite ispod</p>
           
            
-           .</p>
-          <p><a class="btn btn-default" href="http://www.openvim.com/" role="button">VIM &raquo;</a></p>
-        
-	    <h4>HTTP<a> </a></h4>
-            <input type='hidden' name='path' value='<% requested_path %>'/>
-             
-        
-        
-        
-        
-        
-        </div>
-    
+           .
+<p><a class="btn btn-default" href="http://www.openvim.com/" role="button">VIM »</a></p>
+<h4>HTTP<a>
+</a></h4>
 
-
-    
-<nav class="academy-nav-next" aria-label="Lesson navigation"><a class="academy-nav-button" href="/Step04">Next →</a></nav>
+</div>
+<nav aria-label="Lesson navigation" class="academy-nav-next"><a class="academy-nav-button" href="/Step04">Next →</a></nav>
+</div></div>
+</section>

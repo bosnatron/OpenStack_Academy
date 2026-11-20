@@ -63,3 +63,24 @@ Before implementing Smart_Chat in a future task:
 
 Those items are plans, not implemented capabilities. Current work is visitor
 monitoring and the construction placeholder only.
+
+## Shared Academy appearance
+
+The shared layout uses the black and green design from
+`bosnatron.github.io/linux.html` (reference commit `3fdf699`). All nine lesson
+pages use `public/css/style.css` and `public/js/terminal-theme.js`, including
+the background gears and the same Slackware penguin fixed at the bottom left.
+The penguin retains the reference page's Wikimedia image URL and needs network
+access. Reduced-motion preferences disable gear rotation.
+
+Lesson topic headings have one shared size (`--topic-size: 1.5rem`) and bold
+weight (700). Change that variable to resize them together. The homepage chess
+component keeps its original styling, puzzle data, and unlock behavior.
+Lesson files are content fragments inside `views/layouts/main.tt`; avoid adding
+page-wide styles or another HTML/head/body document inside a lesson.
+
+Validation for this appearance update: the existing Perl suite passed
+(6 files, 72 tests), and Chromium checked 13 pages at desktop and mobile widths
+for consistent headings, a single main region, and horizontal overflow.
+The cloud proxy blocked the external Wikimedia image, so its loading must be
+checked in a browser with access to that host.

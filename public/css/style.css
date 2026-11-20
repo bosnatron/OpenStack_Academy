@@ -1,29 +1,53 @@
-:root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #ad865c; color: #18253b; }
+:root { color-scheme: dark; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; color: #BCEBC2; background: #080A0B; --topic-size: 1.5rem; }
 * { box-sizing: border-box; }
-body { margin: 0; line-height: 1.6; }
-a { color: #1553a4; }
-a:focus-visible { outline: 3px solid #e0a228; outline-offset: 3px; }
-.container { width: min(100% - 2rem, 960px); margin-inline: auto; }
-.site-header { background: #13243e; color: white; }
-.header-inner { min-height: 70px; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-.site-header a { color: white; text-decoration: none; }
-.brand { font-size: 1.25rem; font-weight: 750; }
-main { min-height: 70vh; padding-block: 2rem 4rem; }
-.hero { padding: 2.5rem 0; }
-.eyebrow { color: #27619e; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; font-size: .8rem; }
-h1 { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.15; margin: .3em 0; }
-h2 { margin-top: 1.5rem; }
-.motto { font-weight: 600; }
-.lesson-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1rem; }
-.lesson-list li a { display: flex; flex-direction: column; gap: .3rem; height: 100%; padding: 1.25rem; border: 1px solid #82613f; border-radius: 12px; background: #ad865c; text-decoration: none; }
-.lesson-list li a:hover { border-color: #1553a4; box-shadow: 0 3px 12px #13243e12; }
-.lesson-list strong { color: #172a47; }
-.lesson-list span { color: #53637a; }
-.site-footer { padding: 1.5rem 0; background: #ad865c; color: #52617a; font-size: .85rem; }
+body { margin: 0; line-height: 1.7; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background-image: linear-gradient(to right, rgba(96,125,102,.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(96,125,102,.025) 1px, transparent 1px); background-size: 8px 8px; }
+a { color: #A7F5B4; text-underline-offset: .2em; }
+a:hover { color: #D6FFD9; }
+a:focus-visible, button:focus-visible { outline: 2px solid #ACF2AE; outline-offset: 4px; }
+.container { width: min(960px, calc(100% - 2rem)); margin-inline: auto; }
+.sunlight { position: fixed; inset: 0; pointer-events: none; background: radial-gradient(circle 240px at var(--light-x,50%) var(--light-y,50%), rgba(93,156,105,.13) 0%, rgba(93,156,105,.035) 42%, transparent 100%); }
+.gear-field { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.gear { fill: #0A0D0E; fill-opacity: .96; stroke: #1C2821; stroke-opacity: .75; stroke-width: .7; }
+.gear-cutout { fill: #080A0B; fill-opacity: .98; }
+.gear-wheel { transform-box: fill-box; transform-origin: center; animation: gear-turn 24s linear infinite; }
+.gear-wheel.reverse { animation-direction: reverse; }
+@keyframes gear-turn { from { transform: rotate(var(--initial-angle)); } to { transform: rotate(calc(var(--initial-angle) + 360deg)); } }
+.site-header { position: relative; z-index: 4; min-height: 86px; background: #1C2022; border-bottom: 1px solid rgba(116,210,134,.4); box-shadow: 0 2px 12px #0005; }
+.header-inner { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { font-size: var(--topic-size); font-weight: 700; line-height: 1.25; color: #ACF2AE; text-decoration: none; }
+.terminal-home { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid rgba(153,227,168,.75); border-radius: 50%; color: #A7F5B4; font: 34px/1 Arial,sans-serif; text-decoration: none; }
+.terminal-home:hover { background: rgba(105,184,111,.18); }
+#main-content { position: relative; z-index: 2; min-height: 70vh; padding-block: 2rem 3rem; }
+.hero, .academy-lesson, .smart-chat-preview { padding: clamp(18px,4vw,40px); margin-bottom: 24px; background: rgba(26,31,32,.94); border: 1px solid rgba(112,191,120,.5); border-radius: 16px; box-shadow: 0 10px 34px #0006; overflow-wrap: anywhere; }
+.academy-lesson :is(h1,h2,h3,h4,h5,h6), .hero h1, #lessons-title, .smart-chat-preview :is(h1,h2) { font-size: var(--topic-size); font-weight: 700; line-height: 1.35; color: #ACF2AE; margin: 1.5rem 0 .8rem; }
+.academy-lesson h1:first-child, .hero h1 { margin-top: 0; }
+.academy-lesson .container { width: 100%; }
+.academy-lesson :is(.academy,.lesson,.jumbotron) { margin: 0; padding: 0; }
+.eyebrow { color: #91B998; letter-spacing: .1em; font-size: .8rem; text-transform: uppercase; }
+.motto { font-weight: 700; }
+.lesson-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,260px),1fr)); gap: 1rem; }
+.lesson-list li a { display: flex; flex-direction: column; gap: .4rem; height: 100%; padding: 1.25rem; border: 1px solid #618C6B; border-radius: 12px; background: rgba(26,31,32,.94); text-decoration: none; }
+.lesson-list span { color: #99C5A0; }
 img { max-width: 100%; height: auto; }
-pre { overflow-x: auto; }
-
-
+pre { max-width: 100%; overflow-x: auto; padding: 18px; border: 1px solid #394D3D; border-radius: 9px; background: #0D1410; color: #BCEBC2; line-height: 1.5; }
+code { font-family: inherit; background: #24362A; padding: 2px 5px; border-radius: 4px; }
+pre code { padding: 0; background: none; white-space: pre; }
+nav.links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #394D3D; }
+nav.links a, .academy-nav-button, .smart-chat-preview button { display: inline-block; padding: 10px 18px; color: #B5E8B8; background: #29412E; border: 1px solid #618C6B; border-radius: 9px; font-family: inherit; font-size: 1rem; line-height: 1.4; font-weight: 700; text-decoration: none; }
+.smart-chat-preview button { cursor: pointer; }
+nav.links a[aria-current=page] { font-weight: 700; border-color: #ACF2AE; }
+.academy-nav-next { display: flex; justify-content: flex-end; clear: both; margin-top: 32px; }
+.academy-lesson .topic { margin-block: 14px; padding: 18px; border: 1px solid #394D3D; border-radius: 9px; }
+.site-footer { position: relative; z-index: 2; padding: 1rem 0 3rem; color: #99C5A0; font-size: 11px; text-align: center; }
+.slackware-penguin { position: fixed; z-index: 4; left: 18px; bottom: 32px; display: block; width: clamp(88px,13vw,152px); height: auto; object-fit: contain; filter: drop-shadow(0 5px 5px #0004); pointer-events: none; }
+.magnifier { position: fixed; z-index: 5; width: 132px; height: 132px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(128,207,145,.66); background: rgba(30,40,34,.97); box-shadow: 0 5px 18px #0004; pointer-events: none; opacity: 0; visibility: hidden; }
+.magnifier.visible { opacity: 1; visibility: visible; }
+.magnified-credit { position: absolute; margin: 0; font: 11px/1.7 "SFMono-Regular",Consolas,"Liberation Mono",monospace; color: #99C5A0; text-align: center; transform-origin: top left; }
+/* Keep the fixed mascot in its own gutter, away from lesson text. */
+@media (min-width: 700px) { #main-content, .site-footer .container { width: min(960px,calc(100% - 2 * (clamp(88px,13vw,152px) + 32px))); } }
+@media (max-width: 699px) { .site-footer { padding-bottom: 150px; } #main-content { padding-bottom: 150px; } .slackware-penguin { width: 86px; left: 8px; bottom: 48px; } .brand { font-size: 1.25rem; } }
+@media (prefers-reduced-motion: reduce) { .gear-wheel { animation: none; } }
 /* Chess entrance: presentation only; puzzle and unlock logic will be added separately. */
 .academy-gate { max-width: 620px; margin: 0 auto 3rem; padding: 1rem; border-radius: 18px; background: #202b39; color: #e5edf6; }
 .academy-gate-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: center; margin-bottom: 1rem; font-size: .85rem; font-weight: 700; letter-spacing: .04em; }
@@ -45,26 +69,5 @@ pre { overflow-x: auto; }
 .academy-chess-credit a { color: #d4e6ff; }
 @media (max-width: 420px) { .academy-gate { padding: .6rem; } .academy-gate-heading { font-size: .72rem; } .academy-welcome-close { top: 6px; right: 6px; width: 38px; height: 38px; } }
 
-/* Shared warm sand palette, matching the chess welcome surround. */
-html, body { background-color: #ad865c !important; }
-.jumbotron, .well, .panel, .thumbnail, .card { background-color: #ad865c !important; }
-
-/* Uniform sand-brown page canvas, including outside the chess welcome and board. */
-html, body, body > main, #main-content, #page, #sidebar, .theme-showcase {
-  background-color: #ad865c !important;
-}
-/* Legacy Bootstrap lesson panels can otherwise remain white. */
-.jumbotron, .well, .panel, .panel-body, .thumbnail, .card, .site-footer {
-  background-color: #ad865c !important;
-}
-
-/* Consistent lesson navigation on every Academy step. */
-.smart-chat-preview { margin: 24px 0 36px; padding: 20px; border: 1px solid #d6dce5; border-radius: 12px; }
-.smart-chat-preview h2 { margin-top: 0; }
-.smart-chat-preview button { cursor: pointer; border: 0; border-radius: 8px; padding: 12px 22px; background: #182331; color: white; font: inherit; }
-.smart-chat-preview button:focus-visible { outline: 3px solid #739bd5; outline-offset: 3px; }
-.academy-nav-home { position: fixed; top: 12px; left: 12px; z-index: 100; }
-.academy-nav-next { display: flex; justify-content: flex-end; clear: both; margin: 32px 12px 36px; position: relative; z-index: 2; }
-.academy-nav-button { display: inline-block; padding: 12px 24px; border-radius: 10px; background: #182331; color: #fff !important; font: 700 18px/1.35 system-ui, sans-serif; text-decoration: none !important; box-shadow: 0 3px 10px #18233133; }
-.academy-nav-button:hover, .academy-nav-button:focus-visible { background: #30465f; color: #fff !important; outline-offset: 3px; }
-@media (max-width: 600px) { .academy-nav-home { top: 8px; left: 8px; } .academy-nav-button { padding: 10px 17px; font-size: 16px; } }
+/* The chess entrance keeps its original typography and board presentation. */
+.academy-gate { font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height: 1.6; }

@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Error 404</title>
-  <link rel="stylesheet" href="/css/error.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OpenStack Academy: practical open-source technology education.">
+  <meta name="theme-color" content="#080A0B">
+  <title>Error 404 — OpenStack Academy</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-<h1>Error 404</h1>
-<div id="content">
-<h2>Page Not Found</h2><p>Sorry, this is the void.</p>
-</div>
-<div id="footer">
-Powered by <a href="http://perldancer.org/">Dancer2</a>.
-</div>
+<body class="terminal-theme">
+  <div class="sunlight" aria-hidden="true"></div>
+  <svg id="gearField" class="gear-field" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">OpenStack Academy</a>
+      <nav aria-label="Main navigation"><a class="terminal-home" href="/" aria-label="Back to Academy home" title="Academy home">←</a></nav>
+    </div>
+  </header>
+  <main class="container" id="main-content">
+    <section class="academy-lesson error-page"><h1>Error 404</h1><h2>Page not found</h2><p>The page you requested could not be found.</p><a class="academy-nav-button" href="/">Return to Academy</a></section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">Independent open-source education project. Not affiliated with or endorsed by OpenStack or the OpenInfra Foundation.</div>
+  </footer>
+  <img class="slackware-penguin" src="https://upload.wikimedia.org/wikipedia/commons/5/57/Slackware-mascot.png" width="190" height="190" alt="Tux penguin">
+  <div id="creditMagnifier" class="magnifier" aria-hidden="true"><p id="magnifiedCredit" class="magnified-credit"></p></div>
+  <script src="/js/terminal-theme.js" defer></script>
 </body>
 </html>

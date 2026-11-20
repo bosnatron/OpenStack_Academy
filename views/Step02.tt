@@ -1,194 +1,91 @@
-<nav class="academy-nav-home" aria-label="Lesson home"><a class="academy-nav-button" href="/">⌂ Home</a></nav>
-<div id="page">
-<div id ="sidebar">
-<ul id="sidebar-items">  
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-			
-			   		    
-
-
-
-
-
-
-
-
-
-<style>
-body {
-    background-color: #ad865c;
-}
-</style>
-
-<body>
-
-
-    <div class="container theme-showcase" role="main">
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Linux Komande</h1>
-        <h2 class="featured-subtitle">Slackware </h2>
-
-<style>
-h4 {
-    text-align: center;
-    color: red;
-} 
-</style>
-</head>
-<body>
-        
-
-			   		 <h4>Sada postoji mogucnost da vam nije bootalo sistem</h4>
-			   		 <h4>Sve zavisi na koju ste masinu installirali i koju verziju</h4>
-			   		 <h4>Znam da je frustrirajuce, meni se to desilo 100 puta</h4>
-			   		 <h4>Ovo je neizbjezno da se nekom desi</h4>
-			   		 </body>
-			   		<h1>Terminal</h1>
-			   		<p>Poslije urednog bootanja utipkajte (root) izgledat ce user:root(Stisnite Enter)</p>
-			   		<p>Utipkajte:password koji ste sami izabrali prilikom zavrsetka instalacije.</p>
-			   		<h2>adduser</h2>
-			   		<p>Prvo cemo da kreiramo novog korisnika</p>
-			   		<p>Utipkajte: adduser</p>
-			   		<p>Sledece sto cete da vidite je:</p>
-			   		<p>Login name for new user []: </p>
-			   		<p>Ukucajte vas ime ili sta zelite(Enter)</p>
-			   		<p>Sledece korake samo Enter-Enter do password-a</p>
-			   		<p>ili ipak mozete na neka pitanja da odgovorite po zelji vam</p>
-			   		<p>Kada dodje New password utipkajte password</p>
-			   		<p>Zatim ce ponovo da trazi da utipkate isto</p>
-			   		<p>Sledece tipkajte: exit</p>
-			   		<p>Sada smo uradili log-out kao root user</p>
-			   		<p>Sledeci korak je da se ulogujemo kao novi user</p>
-			   		<p>Pa unesite novo korisnicko ime i novi password</p>
-			   		<p>Sada kada ste ulogovani pod novim korisnikom</p>
-			   		<p>Vas sistem je siguran da ga necete pokvariti :)</p>
-			   		<p>A i poslije kad steknete vise iskustva nikada necete raditi pod user root account</p>
-			   		<p>Idemo dalje-Ne zelim ni da pomisljate na<a href="https://en.wikipedia.org/wiki/Graphical_user_interface"> GUI</a></p>
-			   		<h1>Neke od komandi</h1>
-			   		<p>Sve ove komande od danas cete koristiti stalno</p>
-			   		<p>Kucajte pwd</p>
-			   		<p>Printa trenutni put do vaseg foldera u kojem se nalazite</p>
-			   		<p>Nadam se da vam je jasno gdje se nalazite poslije isprintanog</p>
-			   		<p>Utipkajte sada cd /</p>
-			   		<p>Zatim utipkajte ls</p>
-			   		<p>Da li vidite sada:</p>
-			   		<h3>bin  boot  dev  etc  home  lib  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var</h3>
-			   		<p> cd / gdje god da se nalazimo ta komanda nas vraca u root direktorij</p>
-			   		<p>ls - izlistava sve sto se nalazi unutar foldera u kojem se nalazimo</p>
-			   		<p>Probajte sada ls -l, ls -t, ls -a, ls -b, ls -F, ls -al</p>
-			   		<p>Kada tipkate ls -al tada cete da vidite pored svakog foldera ili fajla nesto kao-rw-r--r--</p>
-			   		<p>To vam govori u kojem modu je neki folder ili fajl, to vam prepustam da sami istrazite sta je chmod komanda</p>
-			   		<p>chmod cete koristit kada se susretnete kao root user u neki fajl i prikaze Permisson Denied</p>
-			   		<p>Sledeca komanda je cd /home</p>
-			   		<p>Prelazite u home folder, znacenje cd je change direktorij</p>
-			   		<p>Sada kucajte ls i pogledajte sta sve ima u /home</p>
-			   		<p>Sada samo predjite u jedan od foldera koji se nalaze unutra</p>
-			   		<p>Ovako: cd /ime_tog_direktorija
+<section class="academy-lesson" lang="bs">
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+<h1>Linux Komande</h1>
+<h2 class="featured-subtitle">Slackware </h2>
+<h4>Sada postoji mogucnost da vam nije bootalo sistem</h4>
+<h4>Sve zavisi na koju ste masinu installirali i koju verziju</h4>
+<h4>Znam da je frustrirajuce, meni se to desilo 100 puta</h4>
+<h4>Ovo je neizbjezno da se nekom desi</h4>
+<h1>Terminal</h1>
+<p>Poslije urednog bootanja utipkajte (root) izgledat ce user:root(Stisnite Enter)</p>
+<p>Utipkajte:password koji ste sami izabrali prilikom zavrsetka instalacije.</p>
+<h2>adduser</h2>
+<p>Prvo cemo da kreiramo novog korisnika</p>
+<p>Utipkajte: adduser</p>
+<p>Sledece sto cete da vidite je:</p>
+<p>Login name for new user []: </p>
+<p>Ukucajte vas ime ili sta zelite(Enter)</p>
+<p>Sledece korake samo Enter-Enter do password-a</p>
+<p>ili ipak mozete na neka pitanja da odgovorite po zelji vam</p>
+<p>Kada dodje New password utipkajte password</p>
+<p>Zatim ce ponovo da trazi da utipkate isto</p>
+<p>Sledece tipkajte: exit</p>
+<p>Sada smo uradili log-out kao root user</p>
+<p>Sledeci korak je da se ulogujemo kao novi user</p>
+<p>Pa unesite novo korisnicko ime i novi password</p>
+<p>Sada kada ste ulogovani pod novim korisnikom</p>
+<p>Vas sistem je siguran da ga necete pokvariti :)</p>
+<p>A i poslije kad steknete vise iskustva nikada necete raditi pod user root account</p>
+<p>Idemo dalje-Ne zelim ni da pomisljate na<a href="https://en.wikipedia.org/wiki/Graphical_user_interface"> GUI</a></p>
+<h1>Neke od komandi</h1>
+<p>Sve ove komande od danas cete koristiti stalno</p>
+<p>Kucajte pwd</p>
+<p>Printa trenutni put do vaseg foldera u kojem se nalazite</p>
+<p>Nadam se da vam je jasno gdje se nalazite poslije isprintanog</p>
+<p>Utipkajte sada cd /</p>
+<p>Zatim utipkajte ls</p>
+<p>Da li vidite sada:</p>
+<h3>bin  boot  dev  etc  home  lib  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var</h3>
+<p> cd / gdje god da se nalazimo ta komanda nas vraca u root direktorij</p>
+<p>ls - izlistava sve sto se nalazi unutar foldera u kojem se nalazimo</p>
+<p>Probajte sada ls -l, ls -t, ls -a, ls -b, ls -F, ls -al</p>
+<p>Kada tipkate ls -al tada cete da vidite pored svakog foldera ili fajla nesto kao-rw-r--r--</p>
+<p>To vam govori u kojem modu je neki folder ili fajl, to vam prepustam da sami istrazite sta je chmod komanda</p>
+<p>chmod cete koristit kada se susretnete kao root user u neki fajl i prikaze Permisson Denied</p>
+<p>Sledeca komanda je cd /home</p>
+<p>Prelazite u home folder, znacenje cd je change direktorij</p>
+<p>Sada kucajte ls i pogledajte sta sve ima u /home</p>
+<p>Sada samo predjite u jedan od foldera koji se nalaze unutra</p>
+<p>Ovako: cd /ime_tog_direktorija
 			   		<p>Kada ste presli u taj folder opet tipkajte ls</p>
-			   		<p>Sada ukucajte ../</p>
-			   		<p>Ponovo ls</p>
-			   		<p>Skontali ste da komanda ../</p>
-			   		<p>Sta??? Vraca nas jedan folder unazad</p>
-			   		<p>Naucili ste kretanje iz foldera u folder</p>
-			   		<p>Dovoljno da krenemo na Step-3</p>
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		
-			   		<div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Obavezno</h2>
-          <p>Razlika izmedju Analognog i
+<p>Sada ukucajte ../</p>
+<p>Ponovo ls</p>
+<p>Skontali ste da komanda ../</p>
+<p>Sta??? Vraca nas jedan folder unazad</p>
+<p>Naucili ste kretanje iz foldera u folder</p>
+<p>Dovoljno da krenemo na Step-3</p>
+<div class="container">
+<!-- Example row of columns -->
+<div class="row">
+<div class="col-md-4">
+<h2>Obavezno</h2>
+<p>Razlika izmedju Analognog i
            Digitalnog kliknite dole ispod
            i detaljno procitajte
            
            .</p>
-          <p><a class="btn btn-default" href="http://www.webnstudy.com/tema.php?id=analogno-i-digitalno" role="button">Mora da se zna &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Obavezno</h2>
-          <p>Binarni
+<p><a class="btn btn-default" href="http://www.webnstudy.com/tema.php?id=analogno-i-digitalno" role="button">Mora da se zna »</a></p>
+</div>
+<div class="col-md-4">
+<h2>Obavezno</h2>
+<p>Binarni
              Octal
              Decimal
              Hexadecimal.
              Sta je to?
            </p>
-          <p><a class="btn btn-default" href="http://www.informatika.buzdo.com/s050-heksadekadni-sustav.htm" role="button">Mora da se zna &raquo;</a></p>
-      
-      
-      <li>Vim<a> </a></li>
-            <input type='hidden' name='path' value='<% requested_path %>'/>
-             
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      </div>
-       
-			   		
-			   		
-			   		
-			   		
- 
+<p><a class="btn btn-default" href="http://www.informatika.buzdo.com/s050-heksadekadni-sustav.htm" role="button">Mora da se zna »</a></p>
+<li>Vim<a>
+</a></li>
 
-      </div>
-
-    </div> <!-- /container -->
-    
-    </ul>
-
-     </body>
-     </html>
-    
-
-
-    <!-- Bootstrap core JavaScript
+</div>
+</div>
+</div>
+<!-- /container -->
+</p></div>
+<!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/javascripts/jquery-2.2.0.min.js"><\/script>')</script>
-    <script src="/javascripts/bootstrap.min.js"></script> 
-  <nav class="academy-nav-next" aria-label="Lesson navigation"><a class="academy-nav-button" href="/Step03">Next →</a></nav>
-</body>
-</html>
+<!-- Placed at the end of the document so the pages load faster -->
+<nav aria-label="Lesson navigation" class="academy-nav-next"><a class="academy-nav-button" href="/Step03">Next →</a></nav>
+</section>

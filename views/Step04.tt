@@ -1,87 +1,41 @@
-<nav class="academy-nav-home" aria-label="Lesson home"><a class="academy-nav-button" href="/">⌂ Home</a></nav>
-<div id="page">
-<div id ="sidebar">
-<ul id="sidebar-items">  
+<section class="academy-lesson" lang="bs">
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+<h1>Web Server</h1>
+<h2 class="featured-subtitle">HTTP</h2>
+<p>Trenutno na nasem Operativnom Sistemu Slackware Linux distribuciji koju koristimo nalazi se Apache</p>
+<p>Web-Server</p>
+<p>Kojeg mozemo pokrenuti uz malo muke</p>
+<p>Sta je ustvari Apache???</p>
+<p>Ako koristite 10.2 verziju, tada kucate</p>
+<p>cd /</p>
+<p>Zatim: vim /etc/apache/httpd.conf</p>
+<p>Ako koristite 14.1</p>
+<p>cd /</p>
+<p>Utipkajte: vim /etc/httpd/httpd.conf</p>
+<p>Sad sa J i K gore dole malo pogledajte sta se nalazi tu</p>
+<p>Posto je objasnjenje za 14</p>
+<p>Umjesto /etc/rc.d/rc.httpd</p>
+<p>10.2 korisnici MOZDA  ce morati pogledati u drugom folderu, MOZDA</p>
+<p>Uglavnom za 14.1 Server se starta iz /usr/sbin/apachectl -k start</p>
+<p>A restart pod (sudo) user root /etc/rc.d/rc.httpd restart</p>
+<p>Malo se zezajte i ovako ovo nije nasa glavna tema</p>
+</div>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-<style>
-body {
-    background-color: #ad865c;
-}
-</style>
-
-<body>
-
-
-    <div class="container theme-showcase" role="main">
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Web Server</h1>
-        <h2 class="featured-subtitle">HTTP</h2>
-
-			   		<p>Trenutno na nasem Operativnom Sistemu Slackware Linux distribuciji koju koristimo nalazi se Apache</p>
-			   		<p>Web-Server</p>
-			   		<p>Kojeg mozemo pokrenuti uz malo muke</p>
-			   		<p>Sta je ustvari Apache???</p>
-			   		
-			   		<p>Ako koristite 10.2 verziju, tada kucate</p>
-			   		<p>cd /</p>
-			   		<p>Zatim: vim /etc/apache/httpd.conf</p>
-			   		<p>Ako koristite 14.1</p>
-			   		<p>cd /</p>
-			   		<p>Utipkajte: vim /etc/httpd/httpd.conf</p>
-			   		<p>Sad sa J i K gore dole malo pogledajte sta se nalazi tu</p>
-			   		
-			   		<p>Posto je objasnjenje za 14</p>
-			   		<p>Umjesto /etc/rc.d/rc.httpd</p>
-			   		<p>10.2 korisnici MOZDA  ce morati pogledati u drugom folderu, MOZDA</p>
-			   		<p>Uglavnom za 14.1 Server se starta iz /usr/sbin/apachectl -k start</p>
-			   		<p>A restart pod (sudo) user root /etc/rc.d/rc.httpd restart</p>
-			   		<p>Malo se zezajte i ovako ovo nije nasa glavna tema</p>
-			   		
-			   		
-			   				
-
-
-      </div>
-
-    </div> <!-- /container -->
-
- <div class="col-md-4">
-          <h2>Apache</h2>
-          <p>
+<!-- /container -->
+<div class="col-md-4">
+<h2>Apache</h2>
+<p>
              Naj bitnije je da vidite
              It Work's? A ispod kada
              kliknete je kolko-tolko objasnjeno.
              
              </p>
-          <p><a class="btn btn-default" href="https://www.unixmen.com/easy-steps-to-setup-lamp-in-slackware-14-0/" role="button">Web Server &raquo;</a></p>
-       
-       
-       <li>MySQL<a> </a></li>
-            <input type='hidden' name='path' value='<% requested_path %>'/>
-             
-       
-       
-       
-       
-       
-       
-       </div>
-      </div>
-    
+<p><a class="btn btn-default" href="https://www.unixmen.com/easy-steps-to-setup-lamp-in-slackware-14-0/" role="button">Web Server »</a></p>
+<li>MySQL<a>
+</a></li>
 
+</div>
 
-<nav class="academy-nav-next" aria-label="Lesson navigation"><a class="academy-nav-button" href="/Step05">Next →</a></nav>
+<nav aria-label="Lesson navigation" class="academy-nav-next"><a class="academy-nav-button" href="/Step05">Next →</a></nav>
+</section>

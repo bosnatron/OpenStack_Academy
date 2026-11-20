@@ -1,191 +1,74 @@
+<section class="academy-lesson" lang="bs">
 <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="/css/theme.css" rel="stylesheet">
-  </head>
-
-  <body role="document">
+<!-- Custom styles for this template -->
 
 
 
 
+<p>
+<a class="btn btn-primary btn-lg" href="http://www.jarrodoberto.com/articles/2011/08/useful-mysql-command-line-basics" role="button">MySQL</a>
+</p>
 
-  <nav class="academy-nav-home" aria-label="Lesson home"><a class="academy-nav-button" href="/">⌂ Home</a></nav>
-<div id="page">
-<div id ="sidebar">
-<ul id="sidebar-items">  
-
-    
-     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-       <p>
-	<a class="btn btn-primary btn-lg" href="http://www.jarrodoberto.com/articles/2011/08/useful-mysql-command-line-basics" role="button">MySQL</a>
-	
-	
-	
-    
-    
-    
-   
-     </p>
-   
-
-<style>
-body {
-    background-color: #ad865c;
-}
-</style>
-
-<body>
-
-
-    <div class="container theme-showcase" role="main">
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>MySQL</h1>
-        <h2 class="featured-subtitle">Baza podataka</h2>
-
-			
-		
-		
-		
-		
-		
-		
-		
-		
-		
-    
-    
-	
-		
-		
-		
-		
-		</div>	   				
-              
-             
-                
-   
-<head>
- 
-</head>
-<body>
-
- <head>
-<style>
-h4 {
-    text-align: left;
-    color: red;
-} 
-</style>
-</head>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+<h1>MySQL</h1>
+<h2 class="featured-subtitle">Baza podataka</h2>
+</div>
 <div class="container">
-  <h2>Uvod</h2>
-  <p>Sada cemo da pokusamo pokrenuti MySQL</p>
-  <p>Dole ispod je nekoliko koraka koje treba da predjemo</p>
-  <h4>Samo imajte na umu kada budemo kreirali password, da to nije isti password od root koji trenutno koristimo</h4>
-  <p>Znaci neki novi password izmislite i zapisite, to ce da bude password od MySQL root korisnika</p>
- 
+<h2>Uvod</h2>
+<p>Sada cemo da pokusamo pokrenuti MySQL</p>
+<p>Dole ispod je nekoliko koraka koje treba da predjemo</p>
+<h4>Samo imajte na umu kada budemo kreirali password, da to nije isti password od root koji trenutno koristimo</h4>
+<p>Znaci neki novi password izmislite i zapisite, to ce da bude password od MySQL root korisnika</p>
 </div>
-
-</body>
-
-  
-  
-  
- <!DOCTYPE html>
-<html lang="en-us">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-.topic {
-    float: left;
-    margin: 5px;
-    padding: 15px;
-    max-width: 300px;
-    height: 300px;
-    border: 1px solid black;
-}
-</style>
-</head>
-<body>
-
 <h1>Pokretanje</h1>
-
 <div class="topic">
-  <h2>Prvo</h2>
-  <p>Kucajte: su (pa klik Enter)</p>
-  <p>Zatim ukucajte password od root i(klik Enter)</p>
-  <p>Sledece: cd / (Enter) </p>
-  <p>Kucajte ovako: chmod 755 /etc/rc.d/rc.mysqld (Enter)</p>
+<h2>Prvo</h2>
+<p>Kucajte: su (pa klik Enter)</p>
+<p>Zatim ukucajte password od root i(klik Enter)</p>
+<p>Sledece: cd / (Enter) </p>
+<p>Kucajte ovako: chmod 755 /etc/rc.d/rc.mysqld (Enter)</p>
 </div>
-
 <div class="topic">
-  <h2>Drugo</h2>
-  <p>Kucajte: mysql_install_db(Enter)</p>
-  <p>Sad bi trebalo nesto da se pokrene i da izlista upustvo za dalje.</p>
-  <p>Samo pratite sta se desava na ekranu</p>
+<h2>Drugo</h2>
+<p>Kucajte: mysql_install_db(Enter)</p>
+<p>Sad bi trebalo nesto da se pokrene i da izlista upustvo za dalje.</p>
+<p>Samo pratite sta se desava na ekranu</p>
 </div>
-
 <div class="topic">
-  <h2>Trece</h2>
-  <p>Sledece kucajte:</p>
-  <p> usr/share/mysql/mysql.server start
+<h2>Trece</h2>
+<p>Sledece kucajte:</p>
+<p> usr/share/mysql/mysql.server start
   <p>Iskreno se nadam da sve ide po planu.........</p>
-  <p>Sledece: usr/bin/mysql -u root mysql -p
-</div>
-
+<p>Sledece: usr/bin/mysql -u root mysql -p
+</p></p></div>
 <div class="topic">
-  <h2>4</h2>
-  <p>Trebalo bi da vam trazi password ukucajte(neki) novi prilikom zavrsetka treceg koraka.</p>
-  <p>..............</p>
+<h2>4</h2>
+<p>Trebalo bi da vam trazi password ukucajte(neki) novi prilikom zavrsetka treceg koraka.</p>
+<p>..............</p>
 </div>
-
 <div class="topic">
-  <h2>5</h2>
-  <p>Kucajte show databases;(Obavezno na kraju tacka-zarez)</p>
-  <p>Sada vidite databaze koje se trenutno nalaze</p>
+<h2>5</h2>
+<p>Kucajte show databases;(Obavezno na kraju tacka-zarez)</p>
+<p>Sada vidite databaze koje se trenutno nalaze</p>
 </div>
-
 <div class="topic">
-  <h2>6</h2>
-  <p>Sledece sto treba da znate da kreiramo i vas user-name za mysql</p>
-  <p>Kucajte: CREATE USER 'vas-user'@'localhost' IDENTIFIED BY 'neki-password';(Enter)</p>
-  <p>Kucajte: GRANT ALL PRIVILEGES ON * . * TO 'taj-neki-user'@'localhost';(Enter)</p>
+<h2>6</h2>
+<p>Sledece sto treba da znate da kreiramo i vas user-name za mysql</p>
+<p>Kucajte: CREATE USER 'vas-user'@'localhost' IDENTIFIED BY 'neki-password';(Enter)</p>
+<p>Kucajte: GRANT ALL PRIVILEGES ON * . * TO 'taj-neki-user'@'localhost';(Enter)</p>
 </div>
 
-
-</body>
-</html>
-  
-              
-              
-              
-              
-  </div> <!-- /container -->  
-  <p>Samo da kazem idite gore na vrhu stranice kao i na svakoj od koraka</p>
-  <p>imate u plavom kao npr. ovde MySQL i kliknite na to</p>
-  <p>Tako da cete tu isto vidjeti neke osnove a na vama je dalje kolko cete da ucite</p>
-  <p>Jos nesto ako nekome nije pokrenulo server preko usr/share/mysql/mysql.server start</p>
-  <p>Probajte da kucate: etc/rc.d/rc.mysqld start</p>
-  <p>Pod tacku 6 sve cete kucate u jednu liniju nemoj te da copy/paste, zato sto</p>
-  <p>mora da ukucate svoje ime od korisnika i naravno neki totalno - totalno novi password</p>
-              
-              
-		
-
-
-           
-
- <form action='/Step06' method='POST'><input type='submit' value='Perl' /><!-- Bootstrap core JavaScript
+<!-- /container -->
+<p>Samo da kazem idite gore na vrhu stranice kao i na svakoj od koraka</p>
+<p>imate u plavom kao npr. ovde MySQL i kliknite na to</p>
+<p>Tako da cete tu isto vidjeti neke osnove a na vama je dalje kolko cete da ucite</p>
+<p>Jos nesto ako nekome nije pokrenulo server preko usr/share/mysql/mysql.server start</p>
+<p>Probajte da kucate: etc/rc.d/rc.mysqld start</p>
+<p>Pod tacku 6 sve cete kucate u jednu liniju nemoj te da copy/paste, zato sto</p>
+<p>mora da ukucate svoje ime od korisnika i naravno neki totalno - totalno novi password</p>
+<!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/javascripts/jquery-2.2.0.min.js"><\/script>')</script>
-    <script src="/javascripts/bootstrap.min.js"></script> 
-  <nav class="academy-nav-next" aria-label="Lesson navigation"><a class="academy-nav-button" href="/Step06">Next →</a></nav>
-</body>
-</html>
+<!-- Placed at the end of the document so the pages load faster -->
+<nav aria-label="Lesson navigation" class="academy-nav-next"><a class="academy-nav-button" href="/Step06">Next →</a></nav>
+</section>

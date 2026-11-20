@@ -1,38 +1,15 @@
-<nav class="academy-nav-home" aria-label="Lesson home"><a class="academy-nav-button" href="/">⌂ Home</a></nav>
-<div id="page">
-<div id ="sidebar">
-<ul id="sidebar-items">  
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    <div class="container theme-showcase" role="main">
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Instalacija Linux-a</h1>
-        <h2 class="featured-subtitle">
+<section class="academy-lesson" lang="bs">
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+<h1>Instalacija Linux-a</h1>
+<h2 class="featured-subtitle">
 			Slackware
 			   		     </h2>
-	     <p> Prije nego krenemo sa instalacijom trebamo se pripremiti:</p>
-	     <p>-Pronaci neki stari kompijuter kao npr. Pentium I, II, III</p>
-	     <p>-Otici na stranicu Slackware i skinuti Slackware 10.2
-	     na jedan CD, ili usb, ali da ne komplikujemo sa usb neka ide na CD.</p> 
-	     <p>-Slackware 10.2 je mnogo stara verzija ali ce
+<p> Prije nego krenemo sa instalacijom trebamo se pripremiti:</p>
+<p>-Pronaci neki stari kompijuter kao npr. Pentium I, II, III</p>
+<p>-Otici na stranicu Slackware i skinuti Slackware 10.2
+	     na jedan CD, ili usb, ali da ne komplikujemo sa usb neka ide na CD.</p>
+<p>-Slackware 10.2 je mnogo stara verzija ali ce
 	     da nam pomogne za ove prve korake.U slucaju da nemate stari racunar
 	     tada preporucujem samo da imate neki hard-disk koji cete koristiti samo
 	     za Linux sa tom vasom novijom masinom.
@@ -48,146 +25,129 @@
 	     neka vam pomogne i oko druge.
 	     
 	     </p>
-	     <h3>.......</h3>
-	     
-	     <h1>Spremni?</h1>
-	     <p> Sada trenutno treba da imate ispred sebe racunar,
+<h3>.......</h3>
+<h1>Spremni?</h1>
+<p> Sada trenutno treba da imate ispred sebe racunar,
 	         i naravno onaj disk na kojem smo snimili 
 	         Slackware neku od verzija u ISO formatu-OBAVEZNO.
 	         Ukljucite taj racuar udjite u BIOS postavite
 	         CD - DVD na prvo mjesto u boot snimite-izadjite.
 	         Ubacite CD-DVD Disk u DVD citac i restart.</p>
-	         <p>Nadam se da sve ide po planu</p>
-	         <p>Kada se pokrene DVD citac i pocne da ucitava podatke sa diska 
+<p>Nadam se da sve ide po planu</p>
+<p>Kada se pokrene DVD citac i pocne da ucitava podatke sa diska
 	         sto cete da vidite na vasem monitoru jeste crn ekran i bijela slova.
 	         Nesto kao Welcome to Slackware i koja je verzija
 	         i jos nekih 9 linija i dole na kraju ce da bude</p>
-	         <h2> boot: _</h2>
-	         <h2> Stisnite tipku Enter</h2>
-	         <p>Nastavit ce sa  ucitavanjem, vi samo gledajte u ekran
+<h2> boot: _</h2>
+<h2> Stisnite tipku Enter</h2>
+<p>Nastavit ce sa  ucitavanjem, vi samo gledajte u ekran
 	         dok se ne pojavi:</p>
-	         <p>Enter 1 to select a keyboard map: _</p>
-	         <h2>Opet Enter (nista 1)</h2>
-	         <p> I zadnje, kad sve ucita:</p>
-	         <p>Bit ce prikaz na dnu ekrana kao ispod</p>
-	         <h1>slackware login:</h1>
-	         <p>Ukucajte</p>
-	         <h2>root</h2> <p> stisnite Enter</p>
-	         
-	         <p> Sada smo logovani kao root korisnik</p>
-	         <h3>Zatim kucamo fdisk -l (Stisnite Enter)</h3>
-	         <p>Na ekranu bi trebalo sada da vidite:</p>
-	         <p>dev/hda ili dev/hdb ili dev/sda dev/sdb ili ako bude
+<p>Enter 1 to select a keyboard map: _</p>
+<h2>Opet Enter (nista 1)</h2>
+<p> I zadnje, kad sve ucita:</p>
+<p>Bit ce prikaz na dnu ekrana kao ispod</p>
+<h1>slackware login:</h1>
+<p>Ukucajte</p>
+<h2>root</h2>
+<p> stisnite Enter</p>
+<p> Sada smo logovani kao root korisnik</p>
+<h3>Zatim kucamo fdisk -l (Stisnite Enter)</h3>
+<p>Na ekranu bi trebalo sada da vidite:</p>
+<p>dev/hda ili dev/hdb ili dev/sda dev/sdb ili ako bude
 	         nesto totalno drugacije zapisite na papir sta god da bude.</p>
-	         <p>Sledece kucate fdisk i to sto ste zapisali</p>
-	         <p>Ako je bilo dev/hda</p>
-	         <h3>Kucamo: fdisk dev/hda (Stisnite Enter)</h3>
-	         <h1>Priprema za instalaciju</h1>
-	         <p>Trenutno na ekranu vidimo Command (m for help):</p>
-	         <p>Kucajte slovo p i stisnite Enter</p>
-	         <h1>Particije</h1>
-	         <p>To sto vidite sada su particije</p>
-	         <p>Ne znam kolko ih imate ali barem vi znate</p>
-	         <p>Imate sada uvid u particije 1,2,3,4 itd.</p>
-	         <p>Kolko ih imate sve cemo sada da ih obrisemo</p>
-	         <p>Vi cete imati prikaz:</p>
-	         <h2>Command (m for help):</h2>
-	         <p>Tu cete da kucate slovo d</p>
-	         <h2>Bilo bi->Command (m for help):d (Stisnite Enter)</h2>
-	         <p>Slovo d je delete (brisanje)</p>
-	         <p>Sve cete brojeve izbrisati kolko god ste imali particija</p>
-	         <p>Kada stisnete d tada ce vam izaci kao:Partition number(1-4)</p>
-	         <p>I tako ako ste imali samo dvije, dvije cete i obrisati</p>
-	         <h3>d(Enter) 1(Enter),pa opet d(Enter) 2(Enter) i tako svaku</h3> 
-	         <h1>Kreiranje novih particija</h1>
-	         <p>Kada smo sve obrisali</p>
-	         <p>Opet bi trebalo da vidite</p>
-	         <h2>Command (m for help):</h2>
-	         <p>Samo da najavim da cemo kreirati 3 particije
+<p>Sledece kucate fdisk i to sto ste zapisali</p>
+<p>Ako je bilo dev/hda</p>
+<h3>Kucamo: fdisk dev/hda (Stisnite Enter)</h3>
+<h1>Priprema za instalaciju</h1>
+<p>Trenutno na ekranu vidimo Command (m for help):</p>
+<p>Kucajte slovo p i stisnite Enter</p>
+<h1>Particije</h1>
+<p>To sto vidite sada su particije</p>
+<p>Ne znam kolko ih imate ali barem vi znate</p>
+<p>Imate sada uvid u particije 1,2,3,4 itd.</p>
+<p>Kolko ih imate sve cemo sada da ih obrisemo</p>
+<p>Vi cete imati prikaz:</p>
+<h2>Command (m for help):</h2>
+<p>Tu cete da kucate slovo d</p>
+<h2>Bilo bi-&gt;Command (m for help):d (Stisnite Enter)</h2>
+<p>Slovo d je delete (brisanje)</p>
+<p>Sve cete brojeve izbrisati kolko god ste imali particija</p>
+<p>Kada stisnete d tada ce vam izaci kao:Partition number(1-4)</p>
+<p>I tako ako ste imali samo dvije, dvije cete i obrisati</p>
+<h3>d(Enter) 1(Enter),pa opet d(Enter) 2(Enter) i tako svaku</h3>
+<h1>Kreiranje novih particija</h1>
+<p>Kada smo sve obrisali</p>
+<p>Opet bi trebalo da vidite</p>
+<h2>Command (m for help):</h2>
+<p>Samo da najavim da cemo kreirati 3 particije
 	             prva ce da bude root, druga swap i trecu cemo mi nazvati /home</p>
-	             <h1>1 root particija</h1>
-	             <h2>Kucajte n(Stisnite Enter)</h2>
-	         <p>n je kao new (nova particija)</p>
-	         <p>Sledece kucajte slovo p(pa Enter)</p>
-	         <h2>Sve tri particije ce da budu primarne</h2>
-	         <p>Slovo p je za primarnu</p>
-	         <p>Sledece stisnite broj 1(Stisnite Enter)</p>
-	         <p>Tu cemo da kreiramo root particiju</p>
-	         <h2>Stisnite Enter jednom</h2>
-	         <p>Koju verziju instalirate???</p>
-	         <p>Ako je 14. tada kucate +10GB(Enter)</p>
-	         <p>Ako je 10.2 kucajte +1GB(Enter)</p>
-	         <h1>2 Swap particija</h1>
-	         <h2>Opet isto n</h2>
-	         <p>Sada broj 2 naravno (p) primarna</p>
-	         <h2>Prvi put Enter</h2>
-	         <p>Ako je 14 verzija tada moze +2GB i Enter</p>
-	         <p>Ako je 10.2 +500MB i Enter</p>
-	         <p>Sledece sto mora da uradimo jeste ukucati slovo t
+<h1>1 root particija</h1>
+<h2>Kucajte n(Stisnite Enter)</h2>
+<p>n je kao new (nova particija)</p>
+<p>Sledece kucajte slovo p(pa Enter)</p>
+<h2>Sve tri particije ce da budu primarne</h2>
+<p>Slovo p je za primarnu</p>
+<p>Sledece stisnite broj 1(Stisnite Enter)</p>
+<p>Tu cemo da kreiramo root particiju</p>
+<h2>Stisnite Enter jednom</h2>
+<p>Koju verziju instalirate???</p>
+<p>Ako je 14. tada kucate +10GB(Enter)</p>
+<p>Ako je 10.2 kucajte +1GB(Enter)</p>
+<h1>2 Swap particija</h1>
+<h2>Opet isto n</h2>
+<p>Sada broj 2 naravno (p) primarna</p>
+<h2>Prvi put Enter</h2>
+<p>Ako je 14 verzija tada moze +2GB i Enter</p>
+<p>Ako je 10.2 +500MB i Enter</p>
+<p>Sledece sto mora da uradimo jeste ukucati slovo t
 	           za particiju 2 moramo ukucati broj 82 gdje je swap</p>
-	           <p>Opet sve isto samo slovo t</p>
-	           <h2>Command (m for help):t</h2>
-	           <h2>Partition number:2</h2>
-	           <h2>Hex code: 82</h2>
-	           <p>Mi moramo ukucati broj 82</p>
-	         <h1> 3 /home particija</h1>
-	         <p>Sve isto n(Enter), 3(Enter),i p</p>
-	         <h2> Dva puta enter stisnite sada</h2>
-	         <p>Zato sto cemo da iskoristimo sav preostali 
+<p>Opet sve isto samo slovo t</p>
+<h2>Command (m for help):t</h2>
+<h2>Partition number:2</h2>
+<h2>Hex code: 82</h2>
+<p>Mi moramo ukucati broj 82</p>
+<h1> 3 /home particija</h1>
+<p>Sve isto n(Enter), 3(Enter),i p</p>
+<h2> Dva puta enter stisnite sada</h2>
+<p>Zato sto cemo da iskoristimo sav preostali
 	         prostor na hard disku na ovu trecu particiju</p>
-	         <h1>w</h1>
-	         <h2>Sada cete stisnuti w (i klik Enter)</h2>
-	         <p>w kao write (da snimi particije)</p>
-	         <h1>Nazad na login poziciju</h1>
-	         <p>Sada bi trebali (Automatski) da se nalazimo pod root user</p>
-	         <h2>Kucajte: setup</h2>
-	         <p>Pocinjemo sa installacijom</p>
-	         <p>Sad pratite, ide kakav-takav graficki prikaz.
+<h1>w</h1>
+<h2>Sada cete stisnuti w (i klik Enter)</h2>
+<p>w kao write (da snimi particije)</p>
+<h1>Nazad na login poziciju</h1>
+<p>Sada bi trebali (Automatski) da se nalazimo pod root user</p>
+<h2>Kucajte: setup</h2>
+<p>Pocinjemo sa installacijom</p>
+<p>Sad pratite, ide kakav-takav graficki prikaz.
 	         Ako bude pitanje gdje ce biti root particija
 	         (znamo da smo je planirali u prvu)
 	         Kad izadje pitanje gdje je swap?
 	         Vi oznacite sta god npr dev/sdb2 ili tako slicno
 	         Kada izadje treci kao frame i pitanje kako zelite
 	         da nazovete ovu particiju vi ukucajte /home</p>
-	         <p>Sledece pitanje ce da bude odakle zelimo da instaliramo Slackware</p>
-	         <h2>Naravno izabrat cemo Install from CD - DVD</h2>
-	         <p>Sledece sve ok dok ne dodje Install everything</p>
-	         <p>Naravno da cemo sve da instaliramo</p>
-	         <h2>Izaberite full i kliknite OK</h2>
-	         <p>Kada dodje pitanje make USB boot:</p>
-	         <p>Tada idite na skip i kliknite OK</p>
-	         <p>Sledece Install LILO:</p>
-	         <p>Kliknite na simple</p>
-	         <p>Sledece izaberite:</p>
-	         <p>KDE Desktop Environment</p>
-	         <h1>Set root password</h1>
-	         <p>To je zadnje</p>
-	         <p>Postavka lozinke</p>
-	         <p>Ukucajte lozinku(Enter)</p>
-	         <p>Jos jednom lozinku(Enter)</p>
-	         <p>Restartujte racunar sa reboot</p>
-	         <h2>Kucajte:reboot(i stisnite Enter)</h2>
-	         
-<li>Ako je ovo bilo previse komplikovano pogledajte orginalnu verziju instalacije<a href="http://docs.slackware.com/slackware:install"><input type='submit' value='Slackware'/></a></li>
-	         
-	               
-	          
-<h1>KORAK 2</h1>	         
+<p>Sledece pitanje ce da bude odakle zelimo da instaliramo Slackware</p>
+<h2>Naravno izabrat cemo Install from CD - DVD</h2>
+<p>Sledece sve ok dok ne dodje Install everything</p>
+<p>Naravno da cemo sve da instaliramo</p>
+<h2>Izaberite full i kliknite OK</h2>
+<p>Kada dodje pitanje make USB boot:</p>
+<p>Tada idite na skip i kliknite OK</p>
+<p>Sledece Install LILO:</p>
+<p>Kliknite na simple</p>
+<p>Sledece izaberite:</p>
+<p>KDE Desktop Environment</p>
+<h1>Set root password</h1>
+<p>To je zadnje</p>
+<p>Postavka lozinke</p>
+<p>Ukucajte lozinku(Enter)</p>
+<p>Jos jednom lozinku(Enter)</p>
+<p>Restartujte racunar sa reboot</p>
+<h2>Kucajte:reboot(i stisnite Enter)</h2>
+<li>Ako je ovo bilo previse komplikovano pogledajte orginalnu verziju instalacije<a href="http://docs.slackware.com/slackware:install"><input type="submit" value="Slackware"/></a></li>
+<h1>KORAK 2</h1>
 
-            <input type='hidden' name='path' value='<% requested_path %>'/>
-             
-	         
-	         
-	         
-	         
-        
-      </div>
-      </div>
-      </ul>  
-	         
-	         
-	         
-	         
-	         
-	 
-<nav class="academy-nav-next" aria-label="Lesson navigation"><a class="academy-nav-button" href="/Step02">Next →</a></nav>
+</div>
+
+
+<nav aria-label="Lesson navigation" class="academy-nav-next"><a class="academy-nav-button" href="/Step02">Next →</a></nav>
+</section>
