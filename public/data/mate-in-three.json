@@ -1,9 +1,22 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "source": "Lichess CC0 puzzle database (mateIn3)",
   "source_url": "https://database.lichess.org/",
-  "notes": "FEN is before the first (opponent) move. Apply the first UCI move before presenting the position. Remaining five moves are three solver moves with two forced responses. Client validates legal moves and final checkmate.",
+  "notes": "Apply setup_plies moves before displaying the puzzle. The remaining five moves are one example solution. The server replays submitted legal moves and verifies checkmate after three solver moves; alternate solutions are accepted.",
   "puzzles": [
+    {
+      "id": "queen-sacrifice-001",
+      "fen": "8/8/8/2N5/8/2k1N3/Q3r2q/K7 w - - 0 1",
+      "moves": [
+        "a2c4",
+        "c3d2",
+        "c4c1",
+        "d2c1",
+        "c5b3"
+      ],
+      "setup_plies": 0,
+      "theme": "mateIn3"
+    },
     {
       "id": "mate-three-001wr",
       "lichess_id": "001wR",
@@ -18,7 +31,8 @@
       ],
       "rating": 1187,
       "popularity": 100,
-      "theme": "mateIn3"
+      "theme": "mateIn3",
+      "setup_plies": 1
     },
     {
       "id": "mate-three-004kb",
@@ -34,7 +48,8 @@
       ],
       "rating": 1226,
       "popularity": 92,
-      "theme": "mateIn3"
+      "theme": "mateIn3",
+      "setup_plies": 1
     },
     {
       "id": "mate-three-005wy",
@@ -50,7 +65,8 @@
       ],
       "rating": 2062,
       "popularity": 94,
-      "theme": "mateIn3"
+      "theme": "mateIn3",
+      "setup_plies": 1
     },
     {
       "id": "mate-three-09tn6",
@@ -66,7 +82,8 @@
       ],
       "rating": 1443,
       "popularity": 96,
-      "theme": "mateIn3"
+      "theme": "mateIn3",
+      "setup_plies": 1
     },
     {
       "id": "mate-three-09usi",
@@ -82,7 +99,8 @@
       ],
       "rating": 1459,
       "popularity": 95,
-      "theme": "mateIn3"
+      "theme": "mateIn3",
+      "setup_plies": 1
     },
     {
       "id": "mate-three-09vao",
@@ -98,7 +116,8 @@
       ],
       "rating": 1480,
       "popularity": 98,
-      "theme": "mateIn3"
+      "theme": "mateIn3",
+      "setup_plies": 1
     },
     {
       "id": "mate-three-0a3ai",
@@ -114,7 +133,8 @@
       ],
       "rating": 1048,
       "popularity": 88,
-      "theme": "mateIn3"
+      "theme": "mateIn3",
+      "setup_plies": 1
     }
   ]
 }

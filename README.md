@@ -4,6 +4,24 @@ A local Dancer2 learning website with a chess entrance challenge and lessons.
 The personal Bright Vale assistant is a separate project. Academy_Agent is a
 separate, manually started visitor monitor; it is not a chat assistant.
 
+## Chess entrance validation
+
+The server uses `Chess::Rep` 0.8+ to replay legal moves from the catalog's
+starting position and check mate after three solver moves. Equivalent winning
+lines are accepted, including either rook capturing on f8 in puzzle
+`mate-three-09tn6`. The browser and server share one puzzle catalog; a browser
+claim of checkmate alone cannot unlock lessons.
+
+Install the additional dependency once with the Perl used to run Academy:
+
+```sh
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:$PERL5LIB}" \
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5" \
+/usr/bin/perl -MCPAN -e 'install "Chess::Rep"'
+```
+
+See [chess validation, tests and adding puzzles](docs/chess-validation.md).
+
 ## Run the website and collect visitor activity
 
 Install the dependencies from `cpanfile` using your normal Perl environment.
@@ -70,7 +88,7 @@ component keeps its original styling, puzzle data, and unlock behavior.
 Lesson files are content fragments inside `views/layouts/main.tt`; avoid adding
 page-wide styles or another HTML/head/body document inside a lesson.
 
-Validation on 22 November 2026: the Perl suite passed (6 files, 81 tests),
+Validation on 22 November 2026: the Perl suite passed (7 files, 119 tests),
 including missing chat routes and local image delivery. Chromium checked 26
 page states at desktop and phone widths, completed the chess challenge at both
 widths, and followed all 38 forward/back lesson-navigation links. The penguin

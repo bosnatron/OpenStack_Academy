@@ -1,13 +1,8 @@
-// Academy entrance: three legal White moves, with automatic Black defense.
+// Academy entrance: three legal solver moves, with automatic opponent defense.
 // Chessground is the UI; chess.js validates legal moves and checkmate.
 import { Chessground } from 'https://esm.sh/@lichess-org/chessground@10.5.0';
 import { Chess } from 'https://esm.sh/chess.js@1.4.0';
 
-const PUZZLES = [{
-  id: 'queen-sacrifice-001',
-  fen: '8/8/8/2N5/8/2k1N3/Q3r2q/K7 w - - 0 1',
-  line: ['a2c4', 'c3d2', 'c4c1', 'd2c1', 'c5b3'],
-}];
 async function loadPuzzles() {
   const response = await fetch('/data/mate-in-three.json', { cache: 'no-store' });
   if (!response.ok) throw new Error('Puzzle catalog unavailable');
@@ -15,17 +10,21 @@ async function loadPuzzles() {
   const extra = [];
   for (const p of data.puzzles || []) {
     try {
-      if (!Array.isArray(p.moves) || p.moves.length !== 6) continue;
+      if (![0, 1].includes(p.setup_plies) || !Array.isArray(p.moves)
+          || p.moves.length !== p.setup_plies + 5) continue;
       const verify = new Chess(p.fen);
-      verify.move({from:p.moves[0].slice(0,2),to:p.moves[0].slice(2,4),promotion:p.moves[0][4] || 'q'});
-      const start = verify.fen();
-      for (const raw of p.moves.slice(1)) {
+      for (const raw of p.moves.slice(0, p.setup_plies)) {
         verify.move({from:raw.slice(0,2),to:raw.slice(2,4),promotion:raw[4] || 'q'});
       }
-      if (verify.isCheckmate()) extra.push({id:p.id,fen:start,line:p.moves.slice(1)});
+      const start = verify.fen();
+      for (const raw of p.moves.slice(p.setup_plies)) {
+        verify.move({from:raw.slice(0,2),to:raw.slice(2,4),promotion:raw[4] || 'q'});
+      }
+      if (verify.isCheckmate()) extra.push({id:p.id,fen:start,line:p.moves.slice(p.setup_plies)});
     } catch (_) { /* Reject invalid puzzle data */ }
   }
-  return [...PUZZLES, ...extra];
+  if (!extra.length) throw new Error('No verified puzzles available');
+  return extra;
 }
 
 const board = document.getElementById('academy-chessboard');

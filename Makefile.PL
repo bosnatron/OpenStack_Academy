@@ -22,6 +22,7 @@ WriteMakefile(
         'Dancer2'     => 0.203001,
         'DBI'        => 0,
         'DBD::SQLite' => 0,
+        'Chess::Rep'  => 0.8,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'MyApp-*' },

@@ -7,10 +7,12 @@ README.md
 bin/app.psgi
 config.yml
 cpanfile
+docs/chess-validation.md
 docs/mascot-source.md
 docs/visitor-cookie-bv-integration.md
 environments/development.yml
 environments/production.yml
+lib/Academy/ChessChallenge.pm
 lib/Academy/VisitorActivity.pm
 lib/Academy/VisitorCookie.pm
 lib/Academy/VisitorMiddleware.pm
@@ -29,6 +31,7 @@ public/javascripts/jquery.js
 public/js/academy-chess.js
 t/001_base.t
 t/002_index_route.t
+t/chess_challenge.t
 t/visitor_activity.t
 t/visitor_cookie.t
 t/visitor_middleware.t
