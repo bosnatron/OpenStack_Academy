@@ -8,7 +8,7 @@ use feature 'say';
 
 my $ime = 'Amina';              # Skalar
 my @jezici = ('Perl', 'SQL');   # Array
-my %ocjene = (Perl =&gt; 5);    # Hash
+my %ocjene = (Perl =&gt; 5);       # Hash
 
 say "Zdravo, $ime";
 for my $jezik (@jezici) {
