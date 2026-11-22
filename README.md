@@ -47,22 +47,11 @@ The normal Plack entry point owns startup. Loading `Web.pm` does not itself
 start another HTTP server. The collector and cookie registry remain Academy
 modules, separate from the personal BV runtime.
 
-## Smart_Chat — future work only
+## No chat or assistant connection
 
-The homepage button after the chess puzzle displays **Under construction —
-preview coming soon.** It makes no model request. The legacy `/bv` page also
-shows a construction notice. No working visitor chat is included in this work.
-
-Before implementing Smart_Chat in a future task:
-
-1. Decide its Academy learning purpose and approve the chat scope separately.
-2. Create independent visitor sessions and storage; never use personal BV memory or owner teaching.
-3. Define access, consent, retention, rate limits and abuse handling for a visitor-facing service.
-4. Give it a dedicated backend contract and model configuration; the browser must not call private BV or model ports.
-5. Keep chat separate from the read-only monitoring dashboard and test that visitor messages cannot execute code or administrative actions.
-
-Those items are plans, not implemented capabilities. Current work is visitor
-monitoring and the construction placeholder only.
+Academy is an educational website. It has no chat interface or assistant
+connection. The former Smart_Chat placeholder, legacy chat page and unused API
+routes have been removed. Academy_Agent remains a separate visitor monitor.
 
 ## Shared Academy appearance
 
@@ -70,8 +59,10 @@ The shared layout uses the black and green design from
 `bosnatron.github.io/linux.html` (reference commit `3fdf699`). All nine lesson
 pages use `public/css/style.css` and `public/js/terminal-theme.js`, including
 the background gears and the same Slackware penguin fixed at the bottom left.
-The penguin retains the reference page's Wikimedia image URL and needs network
-access. Reduced-motion preferences disable gear rotation.
+The Slackware penguin is served from `public/images/slackware-mascot.svg`,
+including the welcome screen and chess entrance, so displaying it does not
+require a request to Wikimedia. Source and licensing are recorded in
+`docs/mascot-source.md`. Reduced-motion preferences disable gear rotation.
 
 Lesson topic headings have one shared size (`--topic-size: 1.5rem`) and bold
 weight (700). Change that variable to resize them together. The homepage chess
@@ -79,11 +70,13 @@ component keeps its original styling, puzzle data, and unlock behavior.
 Lesson files are content fragments inside `views/layouts/main.tt`; avoid adding
 page-wide styles or another HTML/head/body document inside a lesson.
 
-Validation for this appearance update: the existing Perl suite passed
-(6 files, 72 tests), and Chromium checked 13 pages at desktop and mobile widths
-for consistent headings, a single main region, and horizontal overflow.
-The cloud proxy blocked the external Wikimedia image, so its loading must be
-checked in a browser with access to that host.
+Validation on 22 November 2026: the Perl suite passed (6 files, 81 tests),
+including missing chat routes and local image delivery. Chromium checked 26
+page states at desktop and phone widths, completed the chess challenge at both
+widths, and followed all 38 forward/back lesson-navigation links. The penguin
+loaded locally in every state without horizontal overflow. External requests
+were blocked during this check; the real pinned chess libraries and styles
+were supplied from a jsDelivr cache because the test environment blocks esm.sh.
 
 Lesson navigation is rendered once by the shared layout, after the complete
 lesson: Previous at the left and Next at the right. The unlocked lesson index

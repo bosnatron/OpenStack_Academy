@@ -7,6 +7,7 @@ README.md
 bin/app.psgi
 config.yml
 cpanfile
+docs/mascot-source.md
 docs/visitor-cookie-bv-integration.md
 environments/development.yml
 environments/production.yml
@@ -16,7 +17,6 @@ lib/Academy/VisitorMiddleware.pm
 lib/Web.pm
 public/404.html
 public/500.html
-public/css/bv.css
 public/css/style.css
 public/data/mate-in-three.json
 public/dispatch.cgi
@@ -24,10 +24,9 @@ public/dispatch.fcgi
 public/favicon.ico
 public/images/perldancer-bg.jpg
 public/images/perldancer.jpg
+public/images/slackware-mascot.svg
 public/javascripts/jquery.js
 public/js/academy-chess.js
-public/js/bv-console.js
-public/js/smart-chat-preview.js
 t/001_base.t
 t/002_index_route.t
 t/visitor_activity.t
@@ -43,7 +42,6 @@ views/Step06.tt
 views/Step07.tt
 views/Step08.tt
 views/Step09.tt
-views/bv.tt
 views/index.tt
 views/layouts/main.tt
 views/login.tt

@@ -34,5 +34,5 @@ not include full streaming transfer or time spent reading. No automatic bans,
 deletion, service launch or restart is enabled. Data remains local and ignored
 by Git. Choose a retention/archive policy separately before sustained public use.
 
-Smart_Chat is a construction placeholder only. Future requirements are in the
-README and do not authorize implementing a chat backend in this change.
+Academy has no chat or assistant connection. The former Smart_Chat placeholder
+and unused chat routes were removed; Academy_Agent only monitors visitor activity.
