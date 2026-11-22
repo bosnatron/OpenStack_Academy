@@ -1,14 +1,14 @@
 <section class="academy-lesson" lang="bs">
 <div class="academy"><article class="lesson"><p>Bosnatron Academy · Lekcija 6</p><h1>Perl – osnove</h1><p>Perl je programski jezik pogodan za automatizaciju, obradu teksta, rad s datotekama i web aplikacije. Programi se obično čuvaju u datotekama s nastavkom <code>.pl</code>.</p><h2>Prvi koraci</h2><pre><code>perl -v
-perl -e 'print "Zdravo, svijete!\n";'
+perl -e 'print "Vozdra raja!\n";'
 perl -c program.pl
 perl program.pl</code></pre><p>Opcija <code>-v</code> prikazuje verziju, <code>-e</code> izvršava kratki kod, a <code>-c</code> provjerava sintaksu bez pokretanja programa.</p><h2>Varijable i strukture podataka</h2><pre><code>use strict;
 use warnings;
 use feature 'say';
 
-my $ime = 'Amina';              # skalar
-my @jezici = ('Perl', 'SQL');   # niz
-my %ocjene = (Perl =&gt; 5);      # hash
+my $ime = 'Amina';              # Skalar
+my @jezici = ('Perl', 'SQL');   # Array
+my %ocjene = (Perl =&gt; 5);    # Hhash
 
 say "Zdravo, $ime";
 for my $jezik (@jezici) {
