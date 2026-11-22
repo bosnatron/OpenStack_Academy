@@ -1,0 +1,26 @@
+{
+  "chessground": {
+    "repository": "https://github.com/bosnatron/chessground",
+    "revision": "b4f605018e1043640c917e82a74b214cb58e4a05",
+    "version": "10.5.0"
+  },
+  "chessjs": {
+    "package": "chess.js",
+    "version": "1.4.0",
+    "repository": "https://github.com/jhlywa/chess.js"
+  },
+  "build": {
+    "esbuild": "0.28.1",
+    "target": "es2020"
+  },
+  "sha256": {
+    "chessground/chessground.js": "b30aa156978c221dd4b820d3e95a5e5c78f3580e49ee63e65ad57a3b5be0a641",
+    "chessground/chessground.base.css": "fbfa4b0e791c58c9e793161e543ce712d85663318a82e547aee7db8f817770f2",
+    "chessground/chessground.brown.css": "cc666266d116b752ea085851f2514b25a0273501c6e6f224cbf4282bf01e8123",
+    "chessground/chessground.cburnett.css": "f9216192b5383a83e62a81de1cf58520f7c251f6f24930f5710a3c797f78ced4",
+    "chessground/LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "chessground/SOURCE.tar.gz": "0db7031e6f39290d2fe0190a4838eb3070482e0f5e776f192ea01ce0baaf6461",
+    "chess.js/chess.js": "cc451a758d71b9ebdb8ca31ff7638db513aa16d4c1ff9ae567a6a389376b83c8",
+    "chess.js/LICENSE": "0b3a3c2b4432a26bb18f9d06f5bba4de015bcc980306b7db28b06025495e2186"
+  }
+}

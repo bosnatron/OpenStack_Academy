@@ -4,6 +4,14 @@ A local Dancer2 learning website with a chess entrance challenge and lessons.
 The personal Bright Vale assistant is a separate project. Academy_Agent is a
 separate, manually started visitor monitor; it is not a chat assistant.
 
+## Offline chess entrance
+
+The chess entrance now runs without external downloads. Chessground is built
+from the owner's `bosnatron/chessground` fork; chess.js, board styles and piece
+graphics are also served locally. The X button works independently of chess
+loading. No additional runtime installation is needed for these browser assets.
+See [sources, rebuild instructions and offline tests](docs/offline-chess.md).
+
 ## Chess entrance validation
 
 The server uses `Chess::Rep` 0.8+ to replay legal moves from the catalog's
@@ -88,13 +96,13 @@ component keeps its original styling, puzzle data, and unlock behavior.
 Lesson files are content fragments inside `views/layouts/main.tt`; avoid adding
 page-wide styles or another HTML/head/body document inside a lesson.
 
-Validation on 22 November 2026: the Perl suite passed (7 files, 119 tests),
+Validation on 22 November 2026: the Perl suite passed (8 files, 146 tests),
 including missing chat routes and local image delivery. Chromium checked 26
 page states at desktop and phone widths, completed the chess challenge at both
 widths, and followed all 38 forward/back lesson-navigation links. The penguin
 loaded locally in every state without horizontal overflow. External requests
-were blocked during this check; the real pinned chess libraries and styles
-were supplied from a jsDelivr cache because the test environment blocks esm.sh.
+were blocked during the latest check; all chess libraries and styles were served
+by Academy itself, without cache fixtures or CDN access.
 
 Lesson navigation is rendered once by the shared layout, after the complete
 lesson: Previous at the left and Next at the right. The unlocked lesson index

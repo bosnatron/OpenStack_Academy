@@ -1,7 +1,7 @@
 // Academy entrance: three legal solver moves, with automatic opponent defense.
 // Chessground is the UI; chess.js validates legal moves and checkmate.
-import { Chessground } from 'https://esm.sh/@lichess-org/chessground@10.5.0';
-import { Chess } from 'https://esm.sh/chess.js@1.4.0';
+import { Chessground } from '/vendor/chessground/chessground.js';
+import { Chess } from '/vendor/chess.js/chess.js';
 
 async function loadPuzzles() {
   const response = await fetch('/data/mate-in-three.json', { cache: 'no-store' });
@@ -28,11 +28,9 @@ async function loadPuzzles() {
 }
 
 const board = document.getElementById('academy-chessboard');
-const overlay = document.getElementById('academy-welcome');
-const dismiss = document.getElementById('academy-welcome-close');
 const notice = document.getElementById('academy-board-status');
 
-if (board && overlay && dismiss && notice) {
+if (board && notice) {
   try {
     const puzzles = await loadPuzzles();
     console.info('Academy checkmate-in-three puzzles loaded:', puzzles.map(p => p.id));
@@ -292,10 +290,6 @@ if (board && overlay && dismiss && notice) {
       }
     });
 
-    dismiss.addEventListener('click', () => {
-      overlay.hidden = true;
-      board.focus();
-    });
     show(puzzleLabel + ' — ' + solverName + ' to move. Attempt ' + (failedAttempts + 1) + ' of 3.');
   } catch (error) {
     notice.textContent = 'Unable to start the chess challenge. Please refresh the page.';

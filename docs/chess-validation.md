@@ -49,6 +49,6 @@ leave lessons locked. Tests use fresh sessions without a visitor database.
 Chromium also completed both finishes through actual board clicks: `f1f8` at
 desktop width and `e8f8` at phone width. Both displayed congratulations and
 opened the lesson index. The browser check covered 26 page states and 38 lesson
-navigation clicks. The cloud test blocks external requests and supplies the
-real pinned chess.js/Chessground packages and styles from a jsDelivr cache;
-the application itself retains its existing browser CDN imports.
+navigation clicks. The latest cloud test blocks external requests and loads the real bundled
+chess.js/Chessground packages and styles directly from Academy. See
+[offline chess](offline-chess.md) for provenance and reproducible browser checks.

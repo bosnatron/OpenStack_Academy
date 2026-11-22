@@ -16,10 +16,10 @@
   <p id="academy-board-status" class="academy-board-status">Solve checkmate in three. Three attempts per puzzle.</p>
   <p class="academy-chess-credit">♟️ Powered by Chessground. Special thanks to the developers and contributors of <a href="https://lichess.org">Lichess</a>. GPL-3.0-or-later · <a href="https://github.com/lichess-org/chessground#readme">Original README</a> · <a href="https://github.com/lichess-org/chessground/blob/master/LICENSE">License</a> · <a href="https://github.com/bosnatron/chessground">Our fork</a> · <a href="https://github.com/bosnatron/OpenStack_Academy">Academy source</a>.</p>
 </section>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.base.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.brown.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.5.0/assets/chessground.cburnett.css">
-<script type="module" src="/js/academy-chess.js?v=legal-mate-validation-4"></script>
+<link rel="stylesheet" href="/vendor/chessground/chessground.base.css">
+<link rel="stylesheet" href="/vendor/chessground/chessground.brown.css">
+<link rel="stylesheet" href="/vendor/chessground/chessground.cburnett.css">
+<script src="/js/academy-chess-entry.js?v=offline-1" defer></script>
 
 <% ELSE %>
 <section class="hero">
